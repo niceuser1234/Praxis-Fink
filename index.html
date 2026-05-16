@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Orthopädische Praxis Klaus Fink — Mölln</title>
-<meta name="description" content="Konservative Orthopädie in Mölln. Akute Schmerzhilfe, Diagnostik und moderne Verfahren — persönlich von Klaus Fink." />
+<title>Orthopädische Praxis Klaus Fink, Mölln</title>
+<meta name="description" content="Konservative Orthopädie in Mölln. Akute Schmerzhilfe, Diagnostik und moderne Verfahren, persönlich von Klaus Fink." />
 
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -13,15 +13,15 @@
 <!-- Open Graph -->
 <meta property="og:type"        content="website" />
 <meta property="og:locale"      content="de_DE" />
-<meta property="og:title"       content="Orthopädische Praxis Klaus Fink — Mölln" />
-<meta property="og:description" content="Konservative Orthopädie in Mölln. Akute Schmerzhilfe, Diagnostik und moderne Verfahren — persönlich von Klaus Fink." />
+<meta property="og:title"       content="Orthopädische Praxis Klaus Fink, Mölln" />
+<meta property="og:description" content="Konservative Orthopädie in Mölln. Akute Schmerzhilfe, Diagnostik und moderne Verfahren, persönlich von Klaus Fink." />
 <meta property="og:url"         content="https://www.praxis-dr-fink-moelln.de" />
 <meta property="og:image"       content="https://www.praxis-dr-fink-moelln.de/Klaus%20Portrait.webp" />
 
 <!-- Twitter Card -->
 <meta name="twitter:card"        content="summary" />
-<meta name="twitter:title"       content="Orthopädische Praxis Klaus Fink — Mölln" />
-<meta name="twitter:description" content="Konservative Orthopädie in Mölln. Akute Schmerzhilfe, Diagnostik und moderne Verfahren — persönlich von Klaus Fink." />
+<meta name="twitter:title"       content="Orthopädische Praxis Klaus Fink, Mölln" />
+<meta name="twitter:description" content="Konservative Orthopädie in Mölln. Akute Schmerzhilfe, Diagnostik und moderne Verfahren, persönlich von Klaus Fink." />
 
 <!-- JSON-LD Structured Data -->
 <script type="application/ld+json">
@@ -107,10 +107,6 @@
     color: #0F1B2D;
   }
   .font-serif { font-family: 'Newsreader', Georgia, serif; }
-
-  /* Services tabs */
-  .tab-panel { display: none; }
-  .tab-panel.active { display: block; }
 
   /* Smooth transitions */
   * { box-sizing: border-box; }
@@ -249,7 +245,7 @@
           </h1>
 
           <p class="text-[17px] leading-[1.65] mb-9 max-w-[48ch]" style="color:rgba(255,255,255,0.85)">
-            Ob Gelenke, Wirbelsäule oder Muskulatur — wir diagnostizieren und behandeln mit
+            Ob Gelenke, Wirbelsäule oder Muskulatur: wir diagnostizieren und behandeln mit
             konservativer Orthopädie, Chirotherapie und modernen Verfahren.
           </p>
 
@@ -362,7 +358,7 @@
           Online-Terminbuchung über Doctolib
         </div>
         <div class="relative text-[13.5px] leading-snug mb-4" style="color:rgba(255,255,255,0.75)">
-          Akut- und Folgetermine bequem online buchen — rund um die Uhr.
+          Akut- und Folgetermine bequem online buchen, rund um die Uhr.
         </div>
         <div class="relative mt-auto inline-flex items-center gap-1 text-[13px] font-semibold" style="color:rgba(255,255,255,0.9)">
           Jetzt buchen
@@ -379,205 +375,117 @@
 <section id="leistungen" class="py-14 lg:py-28">
   <div class="max-w-6xl mx-auto px-6 lg:px-8">
 
-    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12 lg:mb-16">
+    <!-- Header: text left, spine image right -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center mb-14 lg:mb-20">
       <div>
         <div class="text-[11.5px] font-semibold tracking-[0.14em] uppercase mb-3" style="color: var(--primary)">
           Unsere Leistungen
         </div>
-        <h2 class="font-serif font-normal text-slate-900 leading-[1.08] tracking-[-0.01em]"
+        <h2 class="font-serif font-normal text-slate-900 leading-[1.08] tracking-[-0.01em] mb-5"
             style="font-size: clamp(30px, 3.2vw, 48px)">
           Was wir für Sie tun.
         </h2>
+        <p class="text-slate-600 text-[16px] leading-[1.65] max-w-[44ch]">
+          Drei Schwerpunkte: von akuter Hilfe über klare Diagnostik bis zu modernen, schonenden Verfahren.
+        </p>
       </div>
-      <p class="text-slate-600 text-[16px] leading-[1.65] max-w-[44ch]">
-        Drei Schwerpunkte — von akuter Hilfe über klare Diagnostik bis zu modernen, schonenden Verfahren.
-      </p>
-    </div>
-
-    <!-- Tab bar -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-8">
-
-      <button onclick="setTab('akut')" id="tab-akut"
-              class="group text-left p-5 rounded-2xl border transition-all tab-btn tab-active"
-              style="border-color: var(--primary); background: var(--primary-softer)">
-        <div class="w-10 h-10 rounded-xl grid place-items-center mb-4" style="background: var(--primary-soft); color: var(--primary)">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        </div>
-        <div class="font-semibold text-slate-900 text-[16.5px] leading-tight mb-1">Akute Schmerztherapie</div>
-        <div class="text-[13.5px] text-slate-600 leading-snug">Schnelle Hilfe bei plötzlichen Beschwerden — meist innerhalb von 24–48 Std.</div>
-      </button>
-
-      <button onclick="setTab('diag')" id="tab-diag"
-              class="group text-left p-5 rounded-2xl border border-slate-200 transition-all tab-btn hover:border-slate-300 hover:bg-slate-50/60">
-        <div class="w-10 h-10 rounded-xl grid place-items-center mb-4" style="background: var(--primary-softer); color: var(--primary)">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><rect width="7" height="5" x="7" y="7" rx="1"/><rect width="7" height="5" x="10" y="12" rx="1"/></svg>
-        </div>
-        <div class="font-semibold text-slate-900 text-[16.5px] leading-tight mb-1">Diagnostik &amp; Bildgebung</div>
-        <div class="text-[13.5px] text-slate-600 leading-snug">Klare Antworten direkt vor Ort — digital, schnell, ohne erneute Termine.</div>
-      </button>
-
-      <button onclick="setTab('verfahren')" id="tab-verfahren"
-              class="group text-left p-5 rounded-2xl border border-slate-200 transition-all tab-btn hover:border-slate-300 hover:bg-slate-50/60">
-        <div class="w-10 h-10 rounded-xl grid place-items-center mb-4" style="background: var(--primary-softer); color: var(--primary)">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
-        </div>
-        <div class="font-semibold text-slate-900 text-[16.5px] leading-tight mb-1">Spezielle Verfahren</div>
-        <div class="text-[13.5px] text-slate-600 leading-snug">Moderne konservative Methoden — wenn Standardtherapie nicht reicht.</div>
-      </button>
-    </div>
-
-    <!-- Tab panels -->
-    <div class="bg-white rounded-3xl border border-slate-200 shadow-sm">
-
-      <div id="panel-akut" class="tab-panel active p-6 lg:p-10">
-        <div class="grid lg:grid-cols-2 gap-x-12 gap-y-2">
-          <div class="py-3.5 flex gap-3.5">
-            <div class="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
-            <div><div class="text-[15.5px] font-semibold text-slate-900 leading-snug">Akutsprechstunde</div><div class="text-[14px] text-slate-600 leading-[1.55] mt-1">Reservierte Slots für neu aufgetretene starke Schmerzen — bitte telefonisch melden.</div></div>
-          </div>
-          <div class="py-3.5 flex gap-3.5">
-            <div class="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
-            <div><div class="text-[15.5px] font-semibold text-slate-900 leading-snug">Rücken- &amp; Wirbelsäulenschmerzen</div><div class="text-[14px] text-slate-600 leading-[1.55] mt-1">Bandscheibe, Ischias, Hexenschuss, Blockaden — konservative Erstbehandlung in einer Sitzung.</div></div>
-          </div>
-          <div class="py-3.5 flex gap-3.5">
-            <div class="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
-            <div><div class="text-[15.5px] font-semibold text-slate-900 leading-snug">Knie- &amp; Schulterschmerzen</div><div class="text-[14px] text-slate-600 leading-[1.55] mt-1">Schmerzdiagnose, Punktion, Infiltration sowie Kortison- oder Hyalurontherapie nach Bedarf.</div></div>
-          </div>
-          <div class="py-3.5 flex gap-3.5">
-            <div class="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
-            <div><div class="text-[15.5px] font-semibold text-slate-900 leading-snug">Sportverletzungen</div><div class="text-[14px] text-slate-600 leading-[1.55] mt-1">Bänder, Sehnen, Muskelfaserrisse. Erstversorgung, Tape, Stoßwelle, Rückkehr-zum-Sport-Plan.</div></div>
-          </div>
-          <div class="py-3.5 flex gap-3.5 lg:col-span-2">
-            <div class="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
-            <div><div class="text-[15.5px] font-semibold text-slate-900 leading-snug">Manuelle Therapie &amp; Chirotherapie</div><div class="text-[14px] text-slate-600 leading-[1.55] mt-1">Sanftes Lösen von Blockaden an Wirbelsäule und Gelenken — ohne Knacken, wenn gewünscht.</div></div>
-          </div>
-        </div>
-        <div class="mt-8 pt-6 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
-          <div class="text-[13.5px] text-slate-500">Unsicher, was zu Ihnen passt? <span class="text-slate-700">Wir beraten Sie persönlich.</span></div>
-          <a href="tel:+4945426026" class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-[13.5px] font-medium hover:underline" style="color: var(--primary)">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.45 2 2 0 0 1 3.57 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9A16 16 0 0 0 15 16.09l1.09-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            Anruf zur Klärung
-          </a>
-        </div>
-      </div>
-
-      <div id="panel-diag" class="tab-panel p-6 lg:p-10">
-        <div class="grid lg:grid-cols-2 gap-x-12 gap-y-2">
-          <div class="py-3.5 flex gap-3.5">
-            <div class="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
-            <div><div class="text-[15.5px] font-semibold text-slate-900 leading-snug">Digitales Röntgen</div><div class="text-[14px] text-slate-600 leading-[1.55] mt-1">Strahlungsarme Aufnahmen in der Praxis. Befund noch im selben Termin.</div></div>
-          </div>
-          <div class="py-3.5 flex gap-3.5">
-            <div class="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
-            <div><div class="text-[15.5px] font-semibold text-slate-900 leading-snug">Sonographie (Ultraschall)</div><div class="text-[14px] text-slate-600 leading-[1.55] mt-1">Gelenke, Sehnen, Muskeln — schonend und ohne Strahlung.</div></div>
-          </div>
-          <div class="py-3.5 flex gap-3.5">
-            <div class="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
-            <div><div class="text-[15.5px] font-semibold text-slate-900 leading-snug">Ganganalyse &amp; Haltungsdiagnostik</div><div class="text-[14px] text-slate-600 leading-[1.55] mt-1">Für Beschwerden an Knie, Hüfte und Rücken — inkl. Einlagen-Empfehlung.</div></div>
-          </div>
-          <div class="py-3.5 flex gap-3.5">
-            <div class="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
-            <div><div class="text-[15.5px] font-semibold text-slate-900 leading-snug">OP-Beratung &amp; Zweitmeinung</div><div class="text-[14px] text-slate-600 leading-[1.55] mt-1">Zweite Meinung vor geplanten orthopädischen Eingriffen. Unabhängig und in Ruhe.</div></div>
-          </div>
-        </div>
-        <div class="mt-8 pt-6 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
-          <div class="text-[13.5px] text-slate-500">Unsicher, was zu Ihnen passt? <span class="text-slate-700">Wir beraten Sie persönlich.</span></div>
-          <a href="tel:+4945426026" class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-[13.5px] font-medium hover:underline" style="color: var(--primary)">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.45 2 2 0 0 1 3.57 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9A16 16 0 0 0 15 16.09l1.09-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            Anruf zur Klärung
-          </a>
-        </div>
-      </div>
-
-      <div id="panel-verfahren" class="tab-panel p-6 lg:p-10">
-        <div class="grid lg:grid-cols-2 gap-x-12 gap-y-2">
-          <div class="py-3.5 flex gap-3.5">
-            <div class="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
-            <div><div class="text-[15.5px] font-semibold text-slate-900 leading-snug">Stoßwellentherapie</div><div class="text-[14px] text-slate-600 leading-[1.55] mt-1">Fersensporn, Tennisellbogen, chronische Sehnenreizungen. Meist 3–5 Sitzungen.</div></div>
-          </div>
-          <div class="py-3.5 flex gap-3.5">
-            <div class="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
-            <div><div class="text-[15.5px] font-semibold text-slate-900 leading-snug">Hyaluronsäure-Behandlung</div><div class="text-[14px] text-slate-600 leading-[1.55] mt-1">Bei Arthrose im Knie oder an der Schulter — Schmerzlinderung über Monate.</div></div>
-          </div>
-          <div class="py-3.5 flex gap-3.5">
-            <div class="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
-            <div><div class="text-[15.5px] font-semibold text-slate-900 leading-snug">Akupunktur (Körper &amp; Ohr)</div><div class="text-[14px] text-slate-600 leading-[1.55] mt-1">Anerkannte Schmerzakupunktur bei chronischen Rücken- und Knieschmerzen.</div></div>
-          </div>
-          <div class="py-3.5 flex gap-3.5">
-            <div class="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
-            <div><div class="text-[15.5px] font-semibold text-slate-900 leading-snug">Kinderorthopädie</div><div class="text-[14px] text-slate-600 leading-[1.55] mt-1">Fehlhaltungen, X- und O-Beine, Hüftscreening — kindgerecht, einfühlsam.</div></div>
-          </div>
-        </div>
-        <div class="mt-8 pt-6 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
-          <div class="text-[13.5px] text-slate-500">Unsicher, was zu Ihnen passt? <span class="text-slate-700">Wir beraten Sie persönlich.</span></div>
-          <a href="tel:+4945426026" class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-[13.5px] font-medium hover:underline" style="color: var(--primary)">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.45 2 2 0 0 1 3.57 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9A16 16 0 0 0 15 16.09l1.09-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            Anruf zur Klärung
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     FEATURE — Diagnostics
-═══════════════════════════════════════════════════════════ -->
-<section class="py-12 lg:py-24" style="background:#FAFAF7">
-  <div class="max-w-6xl mx-auto px-6 lg:px-8">
-    <div class="grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-14 items-center">
-
-      <!-- Image -->
       <div class="relative rounded-3xl overflow-hidden shadow-md bg-slate-100 aspect-[5/4]">
         <picture>
           <source srcset="Spine.webp" type="image/webp">
           <img src="Spine.png" alt="Röntgenbild Wirbelsäule" class="w-full h-full object-cover">
         </picture>
-        <!-- Badge overlay -->
         <div class="absolute left-4 top-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur text-[11.5px] font-semibold tracking-[0.1em] uppercase shadow-sm"
              style="color: var(--primary-ink)">
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><rect width="7" height="5" x="7" y="7" rx="1"/><rect width="7" height="5" x="10" y="12" rx="1"/></svg>
           Diagnostik vor Ort
         </div>
       </div>
+    </div>
 
-      <!-- Text -->
-      <div>
-        <div class="text-[11.5px] font-semibold tracking-[0.14em] uppercase mb-3" style="color: var(--primary)">Bildgebung &amp; Befund</div>
-        <h2 class="font-serif font-normal text-slate-900 leading-[1.1] tracking-[-0.01em] mb-5"
-            style="font-size: clamp(28px, 3vw, 42px)">
-          Röntgen, Schall und Befund —<br>
-          <em class="italic" style="color: var(--primary)">im selben Termin.</em>
-        </h2>
-        <p class="text-[16px] leading-[1.7] text-slate-600 mb-8 max-w-[52ch]">
-          Sie sollen nicht erst zum Radiologen geschickt werden. Wir röntgen, schallen und besprechen
-          den Befund im selben Termin — strahlungsarm und für GKV-, PKV- und Selbstzahler abrechenbar.
-        </p>
-        <div class="grid sm:grid-cols-2 gap-4">
-          <div class="flex gap-3.5">
-            <div class="w-10 h-10 rounded-xl grid place-items-center flex-shrink-0" style="background: var(--primary-soft); color: var(--primary)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-            </div>
-            <div><div class="text-[15px] font-semibold text-slate-900">Schnell</div><div class="text-[13.5px] text-slate-600 leading-snug">Befund innerhalb weniger Minuten.</div></div>
+    <!-- 3 Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <!-- Card 1: Akute Schmerztherapie -->
+      <div class="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 lg:p-7 flex flex-col">
+        <div class="w-10 h-10 rounded-xl grid place-items-center mb-4" style="background: var(--primary-soft); color: var(--primary)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div class="font-semibold text-slate-900 text-[17px] leading-tight mb-2">Akute Schmerztherapie</div>
+        <div class="text-[13.5px] text-slate-500 leading-snug mb-5">Schnelle Hilfe bei plötzlichen Beschwerden, meist innerhalb von 24–48 Std.</div>
+        <div class="border-t border-slate-100 pt-5 flex flex-col gap-3.5">
+          <div class="flex gap-3">
+            <div class="mt-[7px] w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
+            <div class="text-[13.5px] leading-[1.55]"><span class="font-semibold text-slate-900">Akutsprechstunde:</span><span class="text-slate-600"> Reservierte Slots für neu aufgetretene starke Schmerzen. Bitte telefonisch melden.</span></div>
           </div>
-          <div class="flex gap-3.5">
-            <div class="w-10 h-10 rounded-xl grid place-items-center flex-shrink-0" style="background: var(--primary-soft); color: var(--primary)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <div><div class="text-[15px] font-semibold text-slate-900">Strahlungsarm</div><div class="text-[13.5px] text-slate-600 leading-snug">Modernes digitales Röntgensystem.</div></div>
+          <div class="flex gap-3">
+            <div class="mt-[7px] w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
+            <div class="text-[13.5px] leading-[1.55]"><span class="font-semibold text-slate-900">Rücken- &amp; Wirbelsäulenschmerzen:</span><span class="text-slate-600"> Bandscheibe, Ischias, Hexenschuss, Blockaden. Konservative Erstbehandlung in einer Sitzung.</span></div>
           </div>
-          <div class="flex gap-3.5">
-            <div class="w-10 h-10 rounded-xl grid place-items-center flex-shrink-0" style="background: var(--primary-soft); color: var(--primary)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><path d="m9 11 2 2 4-4"/></svg>
-            </div>
-            <div><div class="text-[15px] font-semibold text-slate-900">Persönlich</div><div class="text-[13.5px] text-slate-600 leading-snug">Befundbesprechung mit dem Arzt.</div></div>
+          <div class="flex gap-3">
+            <div class="mt-[7px] w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
+            <div class="text-[13.5px] leading-[1.55]"><span class="font-semibold text-slate-900">Knie- &amp; Schulterschmerzen:</span><span class="text-slate-600"> Schmerzdiagnose, Punktion, Infiltration sowie Kortison- oder Hyalurontherapie nach Bedarf.</span></div>
           </div>
-          <div class="flex gap-3.5">
-            <div class="w-10 h-10 rounded-xl grid place-items-center flex-shrink-0" style="background: var(--primary-soft); color: var(--primary)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/><line x1="10" x2="8" y1="9" y2="9"/></svg>
-            </div>
-            <div><div class="text-[15px] font-semibold text-slate-900">Ohne Zusatztermin</div><div class="text-[13.5px] text-slate-600 leading-snug">Keine zweite Anfahrt nötig.</div></div>
+          <div class="flex gap-3">
+            <div class="mt-[7px] w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
+            <div class="text-[13.5px] leading-[1.55]"><span class="font-semibold text-slate-900">Sportverletzungen:</span><span class="text-slate-600"> Bänder, Sehnen, Muskelfaserrisse. Erstversorgung, Tape, Stoßwelle, Rückkehr-zum-Sport-Plan.</span></div>
+          </div>
+          <div class="flex gap-3">
+            <div class="mt-[7px] w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
+            <div class="text-[13.5px] leading-[1.55]"><span class="font-semibold text-slate-900">Manuelle Therapie &amp; Chirotherapie:</span><span class="text-slate-600"> Sanftes Lösen von Blockaden an Wirbelsäule und Gelenken. Ohne Knacken, wenn gewünscht.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Diagnostik & Bildgebung -->
+      <div class="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 lg:p-7 flex flex-col">
+        <div class="w-10 h-10 rounded-xl grid place-items-center mb-4" style="background: var(--primary-softer); color: var(--primary)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><rect width="7" height="5" x="7" y="7" rx="1"/><rect width="7" height="5" x="10" y="12" rx="1"/></svg>
+        </div>
+        <div class="font-semibold text-slate-900 text-[17px] leading-tight mb-2">Diagnostik &amp; Bildgebung</div>
+        <div class="text-[13.5px] text-slate-500 leading-snug mb-5">Klare Antworten direkt vor Ort, digital, schnell, ohne erneute Termine.</div>
+        <div class="border-t border-slate-100 pt-5 flex flex-col gap-3.5">
+          <div class="flex gap-3">
+            <div class="mt-[7px] w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
+            <div class="text-[13.5px] leading-[1.55]"><span class="font-semibold text-slate-900">Digitales Röntgen:</span><span class="text-slate-600"> Strahlungsarme Aufnahmen in der Praxis.</span></div>
+          </div>
+          <div class="flex gap-3">
+            <div class="mt-[7px] w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
+            <div class="text-[13.5px] leading-[1.55]"><span class="font-semibold text-slate-900">Sonographie (Ultraschall):</span><span class="text-slate-600"> Gelenke, Sehnen, Muskeln.</span></div>
+          </div>
+          <div class="flex gap-3">
+            <div class="mt-[7px] w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
+            <div class="text-[13.5px] leading-[1.55]"><span class="font-semibold text-slate-900">Ganganalyse &amp; Haltungsdiagnostik:</span><span class="text-slate-600"> Für Beschwerden an Knie, Hüfte und Rücken, inkl. Einlagen-Empfehlung.</span></div>
+          </div>
+          <div class="flex gap-3">
+            <div class="mt-[7px] w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
+            <div class="text-[13.5px] leading-[1.55]"><span class="font-semibold text-slate-900">OP-Beratung &amp; Zweitmeinung:</span><span class="text-slate-600"> Zweite Meinung vor geplanten orthopädischen Eingriffen.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Spezielle Verfahren -->
+      <div class="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 lg:p-7 flex flex-col">
+        <div class="w-10 h-10 rounded-xl grid place-items-center mb-4" style="background: var(--primary-softer); color: var(--primary)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+        </div>
+        <div class="font-semibold text-slate-900 text-[17px] leading-tight mb-2">Spezielle Verfahren</div>
+        <div class="text-[13.5px] text-slate-500 leading-snug mb-5">Moderne konservative Methoden, wenn Standardtherapie nicht reicht.</div>
+        <div class="border-t border-slate-100 pt-5 flex flex-col gap-3.5">
+          <div class="flex gap-3">
+            <div class="mt-[7px] w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
+            <div class="text-[13.5px] leading-[1.55]"><span class="font-semibold text-slate-900">Stoßwellentherapie:</span><span class="text-slate-600"> Fersensporn, Tennisellbogen, chronische Sehnenreizungen. Meist 3–5 Sitzungen.</span></div>
+          </div>
+          <div class="flex gap-3">
+            <div class="mt-[7px] w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
+            <div class="text-[13.5px] leading-[1.55]"><span class="font-semibold text-slate-900">Hyaluronsäure-Behandlung:</span><span class="text-slate-600"> Bei Arthrose im Knie oder an der Schulter. Schmerzlinderung über Monate.</span></div>
+          </div>
+          <div class="flex gap-3">
+            <div class="mt-[7px] w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
+            <div class="text-[13.5px] leading-[1.55]"><span class="font-semibold text-slate-900">Akupunktur (Körper &amp; Ohr):</span><span class="text-slate-600"> Anerkannte Schmerzakupunktur bei chronischen Rücken- und Knieschmerzen.</span></div>
+          </div>
+          <div class="flex gap-3">
+            <div class="mt-[7px] w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
+            <div class="text-[13.5px] leading-[1.55]"><span class="font-semibold text-slate-900">Kinderorthopädie:</span><span class="text-slate-600"> Fehlhaltungen, X- und O-Beine, Hüftscreening.</span></div>
           </div>
         </div>
       </div>
@@ -617,16 +525,16 @@
         </div>
         <h2 class="font-serif font-normal text-slate-900 leading-[1.1] tracking-[-0.01em] mb-6"
             style="font-size: clamp(30px, 3.2vw, 44px)">
-          Ein Arzt, der <em class="italic" style="color: var(--primary)">zuhört</em> — bevor er behandelt.
+          Ein Arzt, der <em class="italic" style="color: var(--primary)">zuhört</em>, bevor er behandelt.
         </h2>
         <p class="text-[17px] leading-[1.7] text-slate-700 mb-5 max-w-[56ch]">
           „Liebe Patientin, lieber Patient, ich freue mich, Sie in meiner Praxis in Mölln zu sehen.
-          Bei akuten Schmerzen an Gelenken, Wirbelsäule oder Muskulatur helfe ich Ihnen — und nehme
+          Bei akuten Schmerzen an Gelenken, Wirbelsäule oder Muskulatur helfe ich Ihnen und nehme
           mir die Zeit, die nötig ist, um zur richtigen Behandlung zu kommen."
         </p>
         <p class="text-[15.5px] leading-[1.65] text-slate-600 mb-8 max-w-[56ch]">
           Wir arbeiten konsequent konservativ und auf dem aktuellen Stand der Medizin. Operationen sind
-          selten der erste Schritt — und nie der einzige Weg, den wir Ihnen anbieten.
+          selten der erste Schritt, und nie der einzige Weg, den wir Ihnen anbieten.
         </p>
         <div class="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-5 pt-6" style="border-top: 1px solid rgba(148,163,184,0.4)">
           <div>
@@ -686,7 +594,7 @@
               <span class="text-[12px] tabular-nums" style="color:rgba(255,255,255,0.55)">12.05.</span>
             </div>
             <div class="text-[15.5px] font-semibold leading-snug mb-1">Online-Terminbuchung über Doctolib</div>
-            <div class="text-[14px] leading-[1.55]" style="color:rgba(255,255,255,0.75)">Sie können ab sofort alle Termine bequem online buchen — auch kurzfristig.</div>
+            <div class="text-[14px] leading-[1.55]" style="color:rgba(255,255,255,0.75)">Sie können ab sofort alle Termine bequem online buchen, auch kurzfristig.</div>
           </div>
 
           <div class="relative rounded-2xl p-5 border" style="border-color:rgba(255,255,255,0.1); background:rgba(255,255,255,0.06)">
@@ -704,7 +612,7 @@
               <span class="text-[12px] tabular-nums" style="color:rgba(255,255,255,0.55)">heute</span>
             </div>
             <div class="text-[15.5px] font-semibold leading-snug mb-1">FFP2-Maske empfohlen</div>
-            <div class="text-[14px] leading-[1.55]" style="color:rgba(255,255,255,0.75)">In den Behandlungsräumen empfehlen wir weiterhin das Tragen einer Maske — zum Schutz aller Patient:innen.</div>
+            <div class="text-[14px] leading-[1.55]" style="color:rgba(255,255,255,0.75)">In den Behandlungsräumen empfehlen wir weiterhin das Tragen einer Maske zum Schutz aller Patient:innen.</div>
           </div>
 
         </div>
@@ -724,7 +632,7 @@
         <div class="text-[11.5px] font-semibold tracking-[0.14em] uppercase mb-3" style="color: var(--primary)">So finden Sie uns</div>
         <h2 class="font-serif font-normal text-slate-900 leading-[1.08] tracking-[-0.01em]"
             style="font-size: clamp(32px, 3.4vw, 46px)">
-          Hauptstraße 33 — <em class="italic" style="color: var(--primary)">mitten in Mölln.</em>
+          Hauptstraße 33, <em class="italic" style="color: var(--primary)">mitten in Mölln.</em>
         </h2>
       </div>
       <p class="text-slate-600 text-[15.5px] max-w-[40ch]">
@@ -828,7 +736,7 @@
               Fragen vor dem Termin?
             </h3>
             <p class="mt-3 text-[15px] leading-[1.65] text-slate-600 max-w-[38ch]">
-              Schreiben Sie uns direkt — wir melden uns in der Regel am gleichen oder nächsten Werktag.
+              Schreiben Sie uns direkt, wir melden uns in der Regel am gleichen oder nächsten Werktag.
             </p>
           </div>
           <div class="flex flex-col gap-3.5 text-[14px] text-slate-600">
@@ -925,7 +833,7 @@
           <span class="font-semibold text-white text-[15px]">Klaus Fink</span>
         </div>
         <p class="text-[14px] leading-[1.65] max-w-[34ch]" style="color:rgba(255,255,255,0.65)">
-          Konservative Orthopädie, Chirotherapie und moderne Diagnostik — für Erwachsene und Kinder in Mölln und Umgebung.
+          Konservative Orthopädie, Chirotherapie und moderne Diagnostik für Erwachsene und Kinder in Mölln und Umgebung.
         </p>
       </div>
 
@@ -1091,31 +999,6 @@ function submitContactForm(e) {
   okEl.classList.remove('hidden');
 }
 
-// ─── Services tabs ─────────────────────────────────────────────
-const PRIMARY = "#0F766E";
-const PRIMARY_SOFTER = "#F0FDFA";
-
-function setTab(id) {
-  // Hide all panels
-  document.querySelectorAll(".tab-panel").forEach(p => p.classList.remove("active"));
-  // Show selected
-  document.getElementById("panel-" + id).classList.add("active");
-
-  // Reset all tabs
-  document.querySelectorAll(".tab-btn").forEach(btn => {
-    btn.style.borderColor = "";
-    btn.style.background = "";
-    btn.classList.remove("tab-active");
-    btn.classList.add("border-slate-200");
-  });
-
-  // Activate selected tab
-  const tab = document.getElementById("tab-" + id);
-  tab.style.borderColor = PRIMARY;
-  tab.style.background = PRIMARY_SOFTER;
-  tab.classList.add("tab-active");
-  tab.classList.remove("border-slate-200");
-}
 </script>
 
 </body>
