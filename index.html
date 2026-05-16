@@ -3,26 +3,92 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Orthopädische Praxis Dr. Klaus Fink — Mölln</title>
-<meta name="description" content="Konservative Orthopädie in Mölln. Akute Schmerzhilfe, Diagnostik und moderne Verfahren — persönlich von Dr. Klaus Fink." />
+<title>Orthopädische Praxis Klaus Fink — Mölln</title>
+<meta name="description" content="Konservative Orthopädie in Mölln. Akute Schmerzhilfe, Diagnostik und moderne Verfahren — persönlich von Klaus Fink." />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="theme-color" content="#0F766E">
 
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        fontFamily: {
-          sans: ['Inter','system-ui','-apple-system','Segoe UI','sans-serif'],
-          serif: ['Newsreader','Georgia','serif'],
-        },
-      },
+<!-- Open Graph -->
+<meta property="og:type"        content="website" />
+<meta property="og:locale"      content="de_DE" />
+<meta property="og:title"       content="Orthopädische Praxis Klaus Fink — Mölln" />
+<meta property="og:description" content="Konservative Orthopädie in Mölln. Akute Schmerzhilfe, Diagnostik und moderne Verfahren — persönlich von Klaus Fink." />
+<meta property="og:url"         content="https://www.praxis-dr-fink-moelln.de" />
+<meta property="og:image"       content="https://www.praxis-dr-fink-moelln.de/Klaus%20Portrait.webp" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card"        content="summary" />
+<meta name="twitter:title"       content="Orthopädische Praxis Klaus Fink — Mölln" />
+<meta name="twitter:description" content="Konservative Orthopädie in Mölln. Akute Schmerzhilfe, Diagnostik und moderne Verfahren — persönlich von Klaus Fink." />
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["MedicalBusiness", "Physician"],
+  "name": "Orthopädische Praxis Klaus Fink",
+  "url": "https://www.praxis-dr-fink-moelln.de",
+  "telephone": "+494542 6026",
+  "email": "praxis@dr-fink-moelln.de",
+  "medicalSpecialty": "Orthopedic",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Hauptstraße 33",
+    "postalCode": "23879",
+    "addressLocality": "Mölln",
+    "addressCountry": "DE"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday"],
+      "opens": "08:00",
+      "closes": "12:00"
     },
-  };
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday"],
+      "opens": "13:00",
+      "closes": "15:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Wednesday",
+      "opens": "08:00",
+      "closes": "12:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Thursday",
+      "opens": "08:00",
+      "closes": "13:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Thursday",
+      "opens": "14:00",
+      "closes": "17:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Friday",
+      "opens": "08:00",
+      "closes": "12:00"
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.2",
+    "reviewCount": "50"
+  }
+}
 </script>
+
+<link rel="stylesheet" href="fonts/fonts.css">
+
+<link rel="stylesheet" href="styles.css">
 
 <style>
   :root {
@@ -90,7 +156,7 @@
       <span class="w-10 h-10 rounded-2xl grid place-items-center font-serif italic text-xl text-white shadow-sm flex-shrink-0"
             style="background: linear-gradient(135deg, var(--primary), var(--accent))">F</span>
       <span class="flex flex-col leading-tight">
-        <span class="font-semibold text-slate-900 text-[15px] tracking-tight">Dr. Klaus Fink</span>
+        <span class="font-semibold text-slate-900 text-[15px] tracking-tight">Klaus Fink</span>
         <span class="text-[11px] text-slate-500 tracking-wide">Orthopädische Praxis · Mölln</span>
       </span>
     </a>
@@ -113,7 +179,7 @@
       </a>
       <a href="https://www.doctolib.de/orthopadie/moelln/klaus-fink"
          target="_blank" rel="noopener"
-         class="btn-lift inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[14px] font-medium text-white shadow-sm"
+         class="btn-lift hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[14px] font-medium text-white shadow-sm"
          style="background: linear-gradient(135deg, var(--primary), var(--accent))">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="m9 16 2 2 4-4"/></svg>
         Termin buchen
@@ -128,12 +194,26 @@
 
   <!-- Mobile menu -->
   <div id="mobile-menu" class="lg:hidden border-t border-slate-200/70 bg-white">
-    <div class="px-6 py-4 flex flex-col gap-3">
-      <a href="#leistungen"  class="py-1.5 text-slate-700">Leistungen</a>
-      <a href="#praxis"      class="py-1.5 text-slate-700">Praxis</a>
-      <a href="#sprechzeiten" class="py-1.5 text-slate-700">Sprechzeiten</a>
-      <a href="#aktuelles"   class="py-1.5 text-slate-700">Aktuelles</a>
-      <a href="#kontakt"     class="py-1.5 text-slate-700">Kontakt</a>
+    <div class="px-6 py-4 flex flex-col gap-1">
+      <a href="#leistungen"  class="py-2 text-slate-700 text-[15px]">Leistungen</a>
+      <a href="#praxis"      class="py-2 text-slate-700 text-[15px]">Praxis</a>
+      <a href="#sprechzeiten" class="py-2 text-slate-700 text-[15px]">Sprechzeiten</a>
+      <a href="#aktuelles"   class="py-2 text-slate-700 text-[15px]">Aktuelles</a>
+      <a href="#kontakt"     class="py-2 text-slate-700 text-[15px]">Kontakt</a>
+    </div>
+    <div class="px-6 pb-5 pt-3 border-t border-slate-100 flex flex-col gap-2.5">
+      <a href="tel:+4945426026"
+         class="flex items-center justify-center gap-2 px-4 py-3 rounded-2xl text-[14.5px] font-medium border border-slate-200 text-slate-700 hover:bg-slate-50 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.45 2 2 0 0 1 3.57 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9A16 16 0 0 0 15 16.09l1.09-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        04542 6026 anrufen
+      </a>
+      <a href="https://www.doctolib.de/orthopadie/moelln/klaus-fink"
+         target="_blank" rel="noopener"
+         class="btn-lift flex items-center justify-center gap-2 px-4 py-3 rounded-2xl text-[14.5px] font-semibold text-white shadow-sm"
+         style="background: linear-gradient(135deg, var(--primary), var(--accent))">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="m9 16 2 2 4-4"/></svg>
+        Termin online buchen
+      </a>
     </div>
   </div>
 </header>
@@ -156,25 +236,24 @@
 
         <!-- Left: Headline + CTAs -->
         <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11.5px] font-medium tracking-[0.14em] uppercase mb-7"
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11.5px] font-medium tracking-[0.14em] uppercase mb-5 lg:mb-7"
                style="background: rgba(255,255,255,0.14); color:#fff; backdrop-filter:blur(8px)">
             <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
-            Orthopädie · Mölln seit 2008
+            Orthopädie · Mölln
           </div>
 
-          <h1 class="font-serif font-normal text-white leading-[1.04] tracking-[-0.015em] mb-7"
-              style="font-size: clamp(42px, 5.6vw, 76px)">
-            Bewegung,<br>
-            die <em class="italic" style="color: var(--primary-soft)">zurückkommt.</em>
+          <h1 class="font-serif font-normal text-white leading-[1.04] tracking-[-0.015em] mb-5 lg:mb-7"
+              style="font-size: clamp(36px, 5.6vw, 76px)">
+            Ihre Praxis für<br>
+            <em class="italic" style="color: var(--primary-soft)">Orthopädie in Mölln.</em>
           </h1>
 
           <p class="text-[17px] leading-[1.65] mb-9 max-w-[48ch]" style="color:rgba(255,255,255,0.85)">
-            Akute Schmerzen an Gelenken, Wirbelsäule oder Muskulatur — wir diagnostizieren schnell
-            und behandeln Sie mit konservativer Orthopädie, Chirotherapie und modernen Verfahren.
-            Persönlich. In Ruhe. Direkt in Mölln.
+            Ob Gelenke, Wirbelsäule oder Muskulatur — wir diagnostizieren und behandeln mit
+            konservativer Orthopädie, Chirotherapie und modernen Verfahren.
           </p>
 
-          <div class="flex flex-wrap items-center gap-3 mb-9">
+          <div class="flex flex-wrap items-center gap-3 mb-6 lg:mb-9">
             <a href="https://www.doctolib.de/orthopadie/moelln/klaus-fink" target="_blank" rel="noopener"
                class="btn-lift inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full text-[15px] font-semibold shadow-lg"
                style="background:#fff; color: var(--primary-ink)">
@@ -213,10 +292,10 @@
             </span>
           </div>
           <div class="font-serif font-normal text-slate-900 leading-[1.08] mb-2" style="font-size:30px">
-            Dr. med. Klaus Fink
+            Klaus Fink
           </div>
           <div class="text-[14px] text-slate-600 leading-[1.55] mb-5">
-            Facharzt für <span class="text-slate-800 font-medium">Orthopädie &amp; Chirotherapie</span>.<br>
+            Facharzt für <span class="text-slate-800 font-medium">Orthopädie &amp; Chirotherapie</span><br>
             Über 17 Jahre Erfahrung in Mölln.
           </div>
           <div class="flex items-center gap-1.5 mb-5">
@@ -297,7 +376,7 @@
 <!-- ═══════════════════════════════════════════════════════════
      SERVICES
 ═══════════════════════════════════════════════════════════ -->
-<section id="leistungen" class="py-24 lg:py-28">
+<section id="leistungen" class="py-14 lg:py-28">
   <div class="max-w-6xl mx-auto px-6 lg:px-8">
 
     <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12 lg:mb-16">
@@ -445,18 +524,16 @@
 <!-- ═══════════════════════════════════════════════════════════
      FEATURE — Diagnostics
 ═══════════════════════════════════════════════════════════ -->
-<section class="py-20 lg:py-24" style="background:#FAFAF7">
+<section class="py-12 lg:py-24" style="background:#FAFAF7">
   <div class="max-w-6xl mx-auto px-6 lg:px-8">
     <div class="grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-14 items-center">
 
       <!-- Image -->
-      <div class="relative rounded-3xl overflow-hidden shadow-md bg-slate-100 aspect-[5/4] flex items-center justify-center">
-        <div class="text-center p-8">
-          <div class="w-16 h-16 rounded-2xl mx-auto mb-4 grid place-items-center" style="background: var(--primary-soft); color: var(--primary)">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><rect width="7" height="5" x="7" y="7" rx="1"/><rect width="7" height="5" x="10" y="12" rx="1"/></svg>
-          </div>
-          <div class="text-slate-400 text-[14px]">Portrait / Röntgenbild</div>
-        </div>
+      <div class="relative rounded-3xl overflow-hidden shadow-md bg-slate-100 aspect-[5/4]">
+        <picture>
+          <source srcset="Spine.webp" type="image/webp">
+          <img src="Spine.png" alt="Röntgenbild Wirbelsäule" class="w-full h-full object-cover">
+        </picture>
         <!-- Badge overlay -->
         <div class="absolute left-4 top-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur text-[11.5px] font-semibold tracking-[0.1em] uppercase shadow-sm"
              style="color: var(--primary-ink)">
@@ -512,23 +589,21 @@
 <!-- ═══════════════════════════════════════════════════════════
      ABOUT
 ═══════════════════════════════════════════════════════════ -->
-<section id="praxis" class="py-24 lg:py-28" style="background: var(--primary-softer)">
+<section id="praxis" class="py-14 lg:py-28" style="background: var(--primary-softer)">
   <div class="max-w-6xl mx-auto px-6 lg:px-8">
     <div class="grid lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-16 items-center">
 
       <!-- Portrait -->
       <div class="relative">
-        <div class="rounded-[28px] overflow-hidden bg-slate-200 flex items-center justify-center"
-             style="aspect-ratio: 1408/3052">
-          <div class="text-center p-8">
-            <div class="w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center" style="background: var(--primary-soft)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" stroke="var(--primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            </div>
-            <div class="text-slate-400 text-[13px]">Portrait Dr. Klaus Fink</div>
-          </div>
+        <div class="rounded-[28px] overflow-hidden bg-slate-200"
+             style="aspect-ratio: 1408/1526">
+          <picture>
+            <source srcset="Klaus Portrait.webp" type="image/webp">
+            <img src="Klaus Portrait.png" alt="Klaus Fink" class="w-full h-full object-cover">
+          </picture>
         </div>
         <!-- Caption card -->
-        <div class="absolute -bottom-4 -right-4 bg-white rounded-2xl px-5 py-4 shadow-lg border border-slate-100 max-w-[64%]">
+        <div class="absolute -bottom-4 right-2 lg:-right-4 bg-white rounded-2xl px-5 py-4 shadow-lg border border-slate-100 max-w-[64%]">
           <div class="text-[11px] font-semibold tracking-[0.1em] uppercase text-slate-500 mb-1">In der Praxis seit</div>
           <div class="font-serif italic leading-none" style="font-size:28px; color: var(--primary)">2008</div>
           <div class="text-[12.5px] text-slate-500 mt-1">über 17 Jahre für Mölln</div>
@@ -576,7 +651,7 @@
 <!-- ═══════════════════════════════════════════════════════════
      HOURS + NEWS
 ═══════════════════════════════════════════════════════════ -->
-<section id="sprechzeiten" class="py-24 lg:py-28">
+<section id="sprechzeiten" class="py-14 lg:py-28">
   <div class="max-w-6xl mx-auto px-6 lg:px-8">
     <div class="grid lg:grid-cols-[1.05fr_1fr] gap-6">
 
@@ -641,7 +716,7 @@
 <!-- ═══════════════════════════════════════════════════════════
      CONTACT
 ═══════════════════════════════════════════════════════════ -->
-<section id="kontakt" class="py-24 lg:py-28">
+<section id="kontakt" class="py-14 lg:py-28">
   <div class="max-w-6xl mx-auto px-6 lg:px-8">
 
     <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
@@ -661,16 +736,8 @@
 
       <!-- Info sidebar -->
       <div class="p-7 lg:p-8 flex flex-col gap-5">
-        <!-- Practice photo placeholder -->
-        <div class="rounded-[18px] overflow-hidden bg-slate-100 flex items-center justify-center" style="width:100%; height:180px">
-          <div class="text-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-2" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
-            <div class="text-slate-400 text-[12px]">Praxis-Innenansicht</div>
-          </div>
-        </div>
-
         <div>
-          <div class="font-serif font-normal text-slate-900 leading-tight mb-1" style="font-size:28px">Praxis Dr. Klaus Fink</div>
+          <div class="font-serif font-normal text-slate-900 leading-tight mb-1" style="font-size:28px">Praxis Klaus Fink</div>
           <div class="flex items-center gap-2 text-[13.5px] text-slate-600">
             <span class="text-amber-500 tracking-[1px]">★★★★☆</span>
             <span class="font-semibold text-slate-800">4,2</span>
@@ -705,15 +772,136 @@
         </a>
       </div>
 
-      <!-- Map -->
-      <div class="relative min-h-[420px] lg:min-h-0">
-        <iframe
-          loading="lazy"
-          src="https://www.google.com/maps?q=Hauptstra%C3%9Fe+33%2C+23879+M%C3%B6lln&output=embed"
-          title="Standort Praxis Dr. Fink"
-          class="absolute inset-0 w-full h-full border-0"
-          allowfullscreen
-        ></iframe>
+      <!-- Map (2-Klick-Lösung / DSGVO-konform) -->
+      <div class="relative min-h-[420px] lg:min-h-0" id="maps-wrapper">
+
+        <!-- Consent placeholder — wird nach Klick durch iframe ersetzt -->
+        <div id="maps-consent"
+             class="absolute inset-0 flex flex-col items-center justify-center gap-5 p-8 text-center"
+             style="background: var(--primary-softer); border-left: 1px solid rgba(148,163,184,0.25)">
+
+          <div class="w-14 h-14 rounded-2xl grid place-items-center"
+               style="background: var(--primary-soft); color: var(--primary)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+
+          <div>
+            <div class="font-semibold text-slate-900 text-[16px] mb-2">Hauptstraße 33, 23879 Mölln</div>
+            <p class="text-[13.5px] text-slate-600 leading-[1.65] max-w-[34ch]">
+              Für die interaktive Karte wird <strong>Google Maps</strong> geladen.
+              Dabei wird Ihre IP-Adresse an Google (USA) übertragen.
+            </p>
+          </div>
+
+          <button onclick="loadGoogleMaps()"
+                  class="btn-lift inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[14px] font-medium text-white"
+                  style="background: linear-gradient(135deg, var(--primary), var(--accent))">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+            Karte laden &amp; zustimmen
+          </button>
+
+          <p class="text-[11.5px] text-slate-400 max-w-[36ch]">
+            Mit dem Klick stimmen Sie der Übertragung zu.<br>
+            Weitere Infos in unserer
+            <a href="datenschutz.html" class="underline hover:text-slate-600">Datenschutzerklärung</a>.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Kontaktformular -->
+    <div class="mt-6 rounded-3xl border border-slate-200 shadow-sm bg-white overflow-hidden">
+      <div class="grid lg:grid-cols-[1fr_1.4fr]">
+
+        <!-- Left: info -->
+        <div class="p-8 lg:p-10 flex flex-col justify-between gap-8" style="background: var(--primary-softer)">
+          <div>
+            <div class="text-[11.5px] font-semibold tracking-[0.14em] uppercase mb-3" style="color: var(--primary)">Nachricht schreiben</div>
+            <h3 class="font-serif font-normal text-slate-900 leading-[1.1]" style="font-size: clamp(24px, 2.5vw, 34px)">
+              Fragen vor dem Termin?
+            </h3>
+            <p class="mt-3 text-[15px] leading-[1.65] text-slate-600 max-w-[38ch]">
+              Schreiben Sie uns direkt — wir melden uns in der Regel am gleichen oder nächsten Werktag.
+            </p>
+          </div>
+          <div class="flex flex-col gap-3.5 text-[14px] text-slate-600">
+            <div class="flex gap-3 items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" style="color:var(--primary); flex-shrink:0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.45 2 2 0 0 1 3.57 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9A16 16 0 0 0 15 16.09l1.09-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Für Akutfälle: bitte anrufen
+            </div>
+            <div class="flex gap-3 items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" style="color:var(--primary); flex-shrink:0"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Keine Übertragung sensibler Gesundheitsdaten per E-Mail
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: form -->
+        <form id="contact-form" class="p-8 lg:p-10 flex flex-col gap-5"
+              novalidate onsubmit="submitContactForm(event)">
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="flex flex-col gap-1.5">
+              <label for="cf-name" class="text-[12.5px] font-semibold tracking-[0.06em] uppercase text-slate-500">Name</label>
+              <input id="cf-name" name="name" type="text" required autocomplete="name"
+                     placeholder="Ihr vollständiger Name"
+                     class="px-4 py-3 rounded-xl border border-slate-200 text-[14.5px] text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 bg-white transition"
+                     style="--tw-ring-color: var(--primary)">
+            </div>
+            <div class="flex flex-col gap-1.5">
+              <label for="cf-phone" class="text-[12.5px] font-semibold tracking-[0.06em] uppercase text-slate-500">Telefon <span class="text-slate-400 font-normal normal-case tracking-normal">(optional)</span></label>
+              <input id="cf-phone" name="phone" type="tel" autocomplete="tel"
+                     placeholder="z. B. 04542 …"
+                     class="px-4 py-3 rounded-xl border border-slate-200 text-[14.5px] text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 bg-white transition"
+                     style="--tw-ring-color: var(--primary)">
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-1.5">
+            <label for="cf-email" class="text-[12.5px] font-semibold tracking-[0.06em] uppercase text-slate-500">E-Mail</label>
+            <input id="cf-email" name="email" type="email" required autocomplete="email"
+                   placeholder="ihre@email.de"
+                   class="px-4 py-3 rounded-xl border border-slate-200 text-[14.5px] text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 bg-white transition"
+                   style="--tw-ring-color: var(--primary)">
+          </div>
+
+          <div class="flex flex-col gap-1.5">
+            <label for="cf-message" class="text-[12.5px] font-semibold tracking-[0.06em] uppercase text-slate-500">Ihre Nachricht</label>
+            <textarea id="cf-message" name="message" required rows="4"
+                      placeholder="Was beschäftigt Sie? Wie können wir helfen?"
+                      class="px-4 py-3 rounded-xl border border-slate-200 text-[14.5px] text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 bg-white transition resize-none"
+                      style="--tw-ring-color: var(--primary)"></textarea>
+          </div>
+
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-1">
+            <p class="text-[12px] text-slate-400 leading-snug max-w-[42ch]">
+              Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Daten gemäß unserer
+              <a href="datenschutz.html" class="underline hover:text-slate-600">Datenschutzerklärung</a> zu.
+            </p>
+            <button type="submit"
+                    class="btn-lift flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full text-[14.5px] font-semibold text-white shadow-sm"
+                    style="background: linear-gradient(135deg, var(--primary), var(--accent))">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="22" x2="11" y1="2" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Nachricht senden
+            </button>
+          </div>
+
+          <!-- Success / error state -->
+          <div id="cf-success" class="hidden rounded-xl px-5 py-4 text-[14px] font-medium" style="background:#DCFCE7; color:#166534">
+            Vielen Dank! Ihre Nachricht wurde geöffnet. Bitte senden Sie die E-Mail ab.
+          </div>
+          <div id="cf-error" class="hidden rounded-xl px-5 py-4 text-[14px] font-medium" style="background:#FEF2F2; color:#991B1B">
+            Bitte füllen Sie alle Pflichtfelder aus.
+          </div>
+
+        </form>
       </div>
     </div>
 
@@ -727,14 +915,14 @@
 ═══════════════════════════════════════════════════════════ -->
 <footer class="text-white" style="background: var(--primary-ink)">
   <div class="max-w-6xl mx-auto px-6 lg:px-8 py-16">
-    <div class="grid lg:grid-cols-[1.4fr_1fr_1fr_1fr] gap-10 lg:gap-12 mb-12">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr] gap-8 lg:gap-12 mb-12">
 
       <!-- Brand col -->
       <div>
         <div class="flex items-center gap-3 mb-3">
           <span class="w-9 h-9 rounded-xl grid place-items-center font-serif italic text-lg text-white shadow-sm"
                 style="background: linear-gradient(135deg, var(--primary), var(--accent))">F</span>
-          <span class="font-semibold text-white text-[15px]">Dr. Klaus Fink</span>
+          <span class="font-semibold text-white text-[15px]">Klaus Fink</span>
         </div>
         <p class="text-[14px] leading-[1.65] max-w-[34ch]" style="color:rgba(255,255,255,0.65)">
           Konservative Orthopädie, Chirotherapie und moderne Diagnostik — für Erwachsene und Kinder in Mölln und Umgebung.
@@ -774,10 +962,10 @@
 
     <div class="flex flex-wrap items-center justify-between gap-4 pt-6 text-[12.5px]"
          style="border-top: 1px solid rgba(255,255,255,0.1); color:rgba(255,255,255,0.55)">
-      <div>© 2026 Orthopädische Praxis Dr. Klaus Fink, Mölln</div>
+      <div>© 2026 Orthopädische Praxis Klaus Fink, Mölln</div>
       <div class="flex gap-5">
-        <a href="#" class="hover:text-white">Impressum</a>
-        <a href="#" class="hover:text-white">Datenschutz</a>
+        <a href="impressum.html" class="hover:text-white">Impressum</a>
+        <a href="datenschutz.html" class="hover:text-white">Datenschutz</a>
         <a href="#" class="hover:text-white">Barrierefreiheit</a>
       </div>
     </div>
@@ -859,6 +1047,49 @@ mobileMenu.querySelectorAll("a").forEach(a => {
     iconClose.classList.add("hidden");
   });
 });
+
+// ─── Google Maps Consent (2-Klick-Lösung) ──────────────────────
+function loadGoogleMaps() {
+  localStorage.setItem('maps-consent', '1');
+  const wrapper = document.getElementById('maps-wrapper');
+  document.getElementById('maps-consent').remove();
+  const iframe = document.createElement('iframe');
+  iframe.src = 'https://www.google.com/maps?q=Hauptstra%C3%9Fe+33%2C+23879+M%C3%B6lln&output=embed';
+  iframe.title = 'Standort Praxis Fink';
+  iframe.className = 'absolute inset-0 w-full h-full border-0';
+  iframe.allowFullscreen = true;
+  wrapper.appendChild(iframe);
+}
+// Karte automatisch laden, wenn Einwilligung bereits erteilt wurde
+if (localStorage.getItem('maps-consent') === '1') {
+  document.addEventListener('DOMContentLoaded', loadGoogleMaps);
+}
+
+// ─── Contact form (mailto fallback) ────────────────────────────
+function submitContactForm(e) {
+  e.preventDefault();
+  const name    = document.getElementById('cf-name').value.trim();
+  const email   = document.getElementById('cf-email').value.trim();
+  const phone   = document.getElementById('cf-phone').value.trim();
+  const message = document.getElementById('cf-message').value.trim();
+  const errEl   = document.getElementById('cf-error');
+  const okEl    = document.getElementById('cf-success');
+
+  if (!name || !email || !message) {
+    errEl.classList.remove('hidden');
+    okEl.classList.add('hidden');
+    return;
+  }
+  errEl.classList.add('hidden');
+
+  const body = `Name: ${name}\nTelefon: ${phone || '–'}\n\n${message}`;
+  const mailto = `mailto:praxis@dr-fink-moelln.de`
+    + `?subject=${encodeURIComponent('Anfrage über die Website – ' + name)}`
+    + `&body=${encodeURIComponent(body)}`;
+
+  window.location.href = mailto;
+  okEl.classList.remove('hidden');
+}
 
 // ─── Services tabs ─────────────────────────────────────────────
 const PRIMARY = "#0F766E";
