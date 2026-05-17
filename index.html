@@ -8,7 +8,9 @@
 
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <meta name="theme-color" content="#0F766E">
+<link rel="canonical" href="https://www.praxis-dr-fink-moelln.de/">
 
 <!-- Open Graph -->
 <meta property="og:type"        content="website" />
@@ -281,10 +283,10 @@
              style="box-shadow: 0 30px 80px -20px rgba(0,0,0,0.35)">
           <div class="flex items-center justify-between mb-5">
             <div class="text-[10.5px] font-semibold tracking-[0.12em] uppercase text-slate-500">Ihr Arzt</div>
-            <span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-[10.5px] font-semibold tracking-[0.04em]"
+            <span id="hero-status-badge" class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-[10.5px] font-semibold tracking-[0.04em]"
                   style="background: var(--primary-softer); color: var(--primary-ink)">
-              <span class="w-1.5 h-1.5 rounded-full" style="background: var(--primary)"></span>
-              IN DER PRAXIS
+              <span id="hero-status-dot" class="w-1.5 h-1.5 rounded-full" style="background: var(--primary)"></span>
+              <span id="hero-status-text">IN DER PRAXIS</span>
             </span>
           </div>
           <div class="font-serif font-normal text-slate-900 leading-[1.08] mb-2" style="font-size:30px">
@@ -776,7 +778,7 @@
       <div class="flex gap-5">
         <a href="impressum.html" class="hover:text-white">Impressum</a>
         <a href="datenschutz.html" class="hover:text-white">Datenschutz</a>
-        <a href="#" class="hover:text-white">Barrierefreiheit</a>
+        <a href="barrierefreiheit.html" class="hover:text-white">Barrierefreiheit</a>
       </div>
     </div>
   </div>
@@ -830,6 +832,31 @@ HOURS.forEach(([day, time], i) => {
   `;
   tableEl.appendChild(li);
 });
+
+// ─── Hero status badge (dynamic open/closed) ───────────────────
+(function() {
+  const badge = document.getElementById('hero-status-badge');
+  const dot   = document.getElementById('hero-status-dot');
+  const text  = document.getElementById('hero-status-text');
+  if (!badge) return;
+  const now = new Date();
+  const timeNum = now.getHours() * 60 + now.getMinutes();
+  let open = false;
+  if (isOpenToday) {
+    for (const slot of todayData[1].split(' · ')) {
+      const [s, e] = slot.split(' – ').map(t => {
+        const [h, m] = t.split(':').map(Number); return h * 60 + m;
+      });
+      if (timeNum >= s && timeNum < e) { open = true; break; }
+    }
+  }
+  if (!open) {
+    badge.style.background = '#F1F5F9';
+    badge.style.color = '#64748B';
+    dot.style.background = '#94A3B8';
+    text.textContent = 'HEUTE GESCHLOSSEN';
+  }
+})();
 
 // ─── Sticky nav ────────────────────────────────────────────────
 const header = document.getElementById("site-header");
