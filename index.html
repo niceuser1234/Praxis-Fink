@@ -18,7 +18,7 @@
 <meta property="og:title"       content="Orthopädische Praxis Klaus Fink, Mölln" />
 <meta property="og:description" content="Konservative Orthopädie in Mölln. Akute Schmerzhilfe, Diagnostik und moderne Verfahren, persönlich von Klaus Fink." />
 <meta property="og:url"         content="https://www.ortho-fink.de" />
-<meta property="og:image"       content="https://www.ortho-fink.de/Klaus%20Portrait.webp" />
+<meta property="og:image"       content="https://www.ortho-fink.de/Klaus%20Portrait.jpeg" />
 
 <!-- Twitter Card -->
 <meta name="twitter:card"        content="summary" />
@@ -508,10 +508,10 @@
 
       <!-- Hours table -->
       <div class="bg-white rounded-3xl border border-slate-200 p-7 lg:p-9 shadow-sm">
-        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11.5px] font-semibold tracking-[0.04em] mb-5"
+        <div id="hours-open-badge" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11.5px] font-semibold tracking-[0.04em] mb-5"
              style="background:#DCFCE7; color:#166534">
-          <span class="w-2 h-2 rounded-full" style="background:#22C55E; box-shadow:0 0 0 4px #22C55E26"></span>
-          Jetzt geöffnet
+          <span id="hours-open-dot" class="w-2 h-2 rounded-full" style="background:#22C55E; box-shadow:0 0 0 4px #22C55E26"></span>
+          <span id="hours-open-text">Jetzt geöffnet</span>
         </div>
         <h3 class="font-serif font-normal text-slate-900 leading-tight mb-1.5" style="font-size:32px">Sprechzeiten</h3>
         <p class="text-[14px] text-slate-500 mb-6">
@@ -746,12 +746,8 @@ HOURS.forEach(([day, time], i) => {
   tableEl.appendChild(li);
 });
 
-// ─── Hero status badge (dynamic open/closed) ───────────────────
+// ─── Open/closed logic — shared by hero + hours badges ─────────
 (function() {
-  const badge = document.getElementById('hero-status-badge');
-  const dot   = document.getElementById('hero-status-dot');
-  const text  = document.getElementById('hero-status-text');
-  if (!badge) return;
   const now = new Date();
   const timeNum = now.getHours() * 60 + now.getMinutes();
   let open = false;
@@ -763,11 +759,29 @@ HOURS.forEach(([day, time], i) => {
       if (timeNum >= s && timeNum < e) { open = true; break; }
     }
   }
+
   if (!open) {
-    badge.style.background = '#F1F5F9';
-    badge.style.color = '#64748B';
-    dot.style.background = '#94A3B8';
-    text.textContent = 'HEUTE GESCHLOSSEN';
+    // Hero badge
+    const badge = document.getElementById('hero-status-badge');
+    const dot   = document.getElementById('hero-status-dot');
+    const text  = document.getElementById('hero-status-text');
+    if (badge) {
+      badge.style.background = '#F1F5F9';
+      badge.style.color = '#64748B';
+      dot.style.background = '#94A3B8';
+      text.textContent = 'HEUTE GESCHLOSSEN';
+    }
+    // Sprechzeiten badge
+    const hBadge = document.getElementById('hours-open-badge');
+    const hDot   = document.getElementById('hours-open-dot');
+    const hText  = document.getElementById('hours-open-text');
+    if (hBadge) {
+      hBadge.style.background = '#F1F5F9';
+      hBadge.style.color = '#64748B';
+      hDot.style.background = '#94A3B8';
+      hDot.style.boxShadow = 'none';
+      hText.textContent = 'Heute geschlossen';
+    }
   }
 })();
 
@@ -827,31 +841,6 @@ function switchLeistungenTab(n) {
   });
 }
 
-// ─── Contact form (mailto fallback) ────────────────────────────
-function submitContactForm(e) {
-  e.preventDefault();
-  const name    = document.getElementById('cf-name').value.trim();
-  const email   = document.getElementById('cf-email').value.trim();
-  const phone   = document.getElementById('cf-phone').value.trim();
-  const message = document.getElementById('cf-message').value.trim();
-  const errEl   = document.getElementById('cf-error');
-  const okEl    = document.getElementById('cf-success');
-
-  if (!name || !email || !message) {
-    errEl.classList.remove('hidden');
-    okEl.classList.add('hidden');
-    return;
-  }
-  errEl.classList.add('hidden');
-
-  const body = `Name: ${name}\nTelefon: ${phone || '–'}\n\n${message}`;
-  const mailto = `mailto:praxiskfink@gmx.de`
-    + `?subject=${encodeURIComponent('Anfrage über die Website – ' + name)}`
-    + `&body=${encodeURIComponent(body)}`;
-
-  window.location.href = mailto;
-  okEl.classList.remove('hidden');
-}
 
 // ── Aktuelles aus der Praxis ─────────────────────────────────
 (function () {
