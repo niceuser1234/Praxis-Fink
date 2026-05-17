@@ -1,0 +1,14 @@
+[
+  {
+    "type": "hinweis",
+    "date": "12.05.",
+    "title": "Online-Terminbuchung über Doctolib",
+    "body": "Sie können ab sofort alle Termine bequem online buchen, auch kurzfristig."
+  },
+  {
+    "type": "wichtig",
+    "date": "heute",
+    "title": "FFP2-Maske empfohlen",
+    "body": "In den Behandlungsräumen empfehlen wir weiterhin das Tragen einer Maske zum Schutz aller Patient:innen."
+  }
+]
