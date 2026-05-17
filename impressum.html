@@ -28,6 +28,9 @@
   }
   .font-serif { font-family: 'Newsreader', Georgia, serif; }
   * { box-sizing: border-box; }
+  .prose-content .bg-white span, .prose-content .bg-white a {
+    overflow-wrap: break-word; word-break: break-word;
+  }
   #site-header {
     position: sticky; top: 0; z-index: 40;
     transition: background 200ms, border-color 200ms;
@@ -75,16 +78,16 @@
     <section>
       <h2 class="text-[13px] font-semibold tracking-[0.12em] uppercase text-slate-500 mb-3">Anbieterkennzeichnung gemäß § 5 DDG</h2>
       <div class="bg-white rounded-2xl border border-slate-200 p-6 flex flex-col gap-2 text-slate-800">
-        <div class="flex gap-3">
-          <span class="text-slate-500 min-w-[200px]">Name der Praxis</span>
+        <div class="flex flex-col sm:flex-row gap-0.5 sm:gap-3">
+          <span class="text-slate-500 text-[13px] sm:text-base sm:min-w-[180px] sm:shrink-0">Name der Praxis</span>
           <span>Praxis für Orthopädie Klaus Fink</span>
         </div>
-        <div class="flex gap-3">
-          <span class="text-slate-500 min-w-[200px]">Inhaber</span>
+        <div class="flex flex-col sm:flex-row gap-0.5 sm:gap-3">
+          <span class="text-slate-500 text-[13px] sm:text-base sm:min-w-[180px] sm:shrink-0">Inhaber</span>
           <span>Klaus Fink</span>
         </div>
-        <div class="flex gap-3">
-          <span class="text-slate-500 min-w-[200px]">Anschrift</span>
+        <div class="flex flex-col sm:flex-row gap-0.5 sm:gap-3">
+          <span class="text-slate-500 text-[13px] sm:text-base sm:min-w-[180px] sm:shrink-0">Anschrift</span>
           <span>Hauptstraße 33, 23879 Mölln</span>
         </div>
       </div>
@@ -93,16 +96,16 @@
     <section>
       <h2 class="text-[13px] font-semibold tracking-[0.12em] uppercase text-slate-500 mb-3">Kontakt</h2>
       <div class="bg-white rounded-2xl border border-slate-200 p-6 flex flex-col gap-2 text-slate-800">
-        <div class="flex gap-3">
-          <span class="text-slate-500 min-w-[72px]">Telefon</span>
+        <div class="flex flex-col sm:flex-row gap-0.5 sm:gap-3">
+          <span class="text-slate-500 text-[13px] sm:text-base sm:min-w-[72px] sm:shrink-0">Telefon</span>
           <a href="tel:+4945426026" class="hover:underline" style="color: var(--primary)">04542 6026</a>
         </div>
-        <div class="flex gap-3">
-          <span class="text-slate-500 min-w-[72px]">E-Mail</span>
+        <div class="flex flex-col sm:flex-row gap-0.5 sm:gap-3">
+          <span class="text-slate-500 text-[13px] sm:text-base sm:min-w-[72px] sm:shrink-0">E-Mail</span>
           <a href="mailto:praxiskfink@gmx.de" class="hover:underline" style="color: var(--primary)">praxiskfink@gmx.de</a>
         </div>
-        <div class="flex gap-3">
-          <span class="text-slate-500 min-w-[72px]">Website</span>
+        <div class="flex flex-col sm:flex-row gap-0.5 sm:gap-3">
+          <span class="text-slate-500 text-[13px] sm:text-base sm:min-w-[72px] sm:shrink-0">Website</span>
           <a href="https://www.ortho-fink.de" target="_blank" rel="noopener" class="hover:underline" style="color: var(--primary)">www.ortho-fink.de</a>
         </div>
       </div>
@@ -111,16 +114,16 @@
     <section>
       <h2 class="text-[13px] font-semibold tracking-[0.12em] uppercase text-slate-500 mb-3">Berufsbezeichnung und berufsrechtliche Regelungen</h2>
       <div class="bg-white rounded-2xl border border-slate-200 p-6 flex flex-col gap-2 text-slate-800">
-        <div class="flex gap-3">
-          <span class="text-slate-500 min-w-[200px]">Gesetzliche Berufsbezeichnung</span>
+        <div class="flex flex-col sm:flex-row gap-0.5 sm:gap-3">
+          <span class="text-slate-500 text-[13px] sm:text-base sm:min-w-[180px] sm:shrink-0">Gesetzliche Berufsbezeichnung</span>
           <span>Arzt (verliehen in der Bundesrepublik Deutschland)</span>
         </div>
-        <div class="flex gap-3">
-          <span class="text-slate-500 min-w-[200px]">Zuständige Ärztekammer</span>
+        <div class="flex flex-col sm:flex-row gap-0.5 sm:gap-3">
+          <span class="text-slate-500 text-[13px] sm:text-base sm:min-w-[180px] sm:shrink-0">Zuständige Ärztekammer</span>
           <span>Ärztekammer Schleswig-Holstein, Bismarckallee 8–12, 23795 Bad Segeberg · <a href="https://www.aeksh.de" target="_blank" rel="noopener" class="underline" style="color: var(--primary)">www.aeksh.de</a></span>
         </div>
-        <div class="flex gap-3">
-          <span class="text-slate-500 min-w-[200px]">Zuständige KV</span>
+        <div class="flex flex-col sm:flex-row gap-0.5 sm:gap-3">
+          <span class="text-slate-500 text-[13px] sm:text-base sm:min-w-[180px] sm:shrink-0">Zuständige KV</span>
           <span>Kassenärztliche Vereinigung Schleswig-Holstein, Bismarckallee 1–6, 23795 Bad Segeberg · <a href="https://www.kvsh.de" target="_blank" rel="noopener" class="underline" style="color: var(--primary)">www.kvsh.de</a></span>
         </div>
       </div>
@@ -147,16 +150,16 @@
     <section>
       <h2 class="text-[13px] font-semibold tracking-[0.12em] uppercase text-slate-500 mb-3">Datenschutz</h2>
       <div class="bg-white rounded-2xl border border-slate-200 p-6 flex flex-col gap-2 text-slate-800">
-        <div class="flex gap-3">
-          <span class="text-slate-500 min-w-[200px]">Verantwortlich</span>
+        <div class="flex flex-col sm:flex-row gap-0.5 sm:gap-3">
+          <span class="text-slate-500 text-[13px] sm:text-base sm:min-w-[180px] sm:shrink-0">Verantwortlich</span>
           <span>Orthopädische Praxis Klaus Fink, Hauptstraße 33, 23879 Mölln · <a href="mailto:praxiskfink@gmx.de" class="hover:underline" style="color: var(--primary)">praxiskfink@gmx.de</a></span>
         </div>
-        <div class="flex gap-3">
-          <span class="text-slate-500 min-w-[200px]">Datenschutzbeauftragter</span>
+        <div class="flex flex-col sm:flex-row gap-0.5 sm:gap-3">
+          <span class="text-slate-500 text-[13px] sm:text-base sm:min-w-[180px] sm:shrink-0">Datenschutzbeauftragter</span>
           <span>Gesetzlich nicht vorgeschrieben.</span>
         </div>
-        <div class="flex gap-3">
-          <span class="text-slate-500 min-w-[200px]">Aufsichtsbehörde</span>
+        <div class="flex flex-col sm:flex-row gap-0.5 sm:gap-3">
+          <span class="text-slate-500 text-[13px] sm:text-base sm:min-w-[180px] sm:shrink-0">Aufsichtsbehörde</span>
           <span>Unabhängiges Landeszentrum für Datenschutz Schleswig-Holstein (ULD), Holstenstraße 98, 24103 Kiel · <a href="https://www.datenschutzzentrum.de" target="_blank" rel="noopener" class="underline" style="color: var(--primary)">www.datenschutzzentrum.de</a></span>
         </div>
       </div>

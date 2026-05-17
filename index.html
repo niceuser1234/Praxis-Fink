@@ -139,6 +139,15 @@
   /* Arrow animation */
   .arrow-anim { transition: transform 150ms; }
   .group:hover .arrow-anim { transform: translate(2px,-2px); }
+
+  /* Leistungen mobile tabs */
+  .leistungen-tab { transition: background 150ms, color 150ms, border-color 150ms; }
+  .leistungen-tab.tab-active-btn {
+    background: var(--primary); color: #fff; border-color: var(--primary);
+  }
+  @media (max-width: 767px) {
+    #leistungen-grid > div:not(.tab-active) { display: none; }
+  }
 </style>
 </head>
 <body>
@@ -338,11 +347,18 @@
       </p>
     </div>
 
+    <!-- Mobile tabs (hidden on md+) -->
+    <div class="flex gap-2 mb-5 md:hidden">
+      <button onclick="switchLeistungenTab(0)" class="leistungen-tab tab-active-btn flex-1 py-2.5 px-2 rounded-2xl text-[11.5px] font-medium border border-slate-200 text-center leading-tight">Schmerztherapie</button>
+      <button onclick="switchLeistungenTab(1)" class="leistungen-tab flex-1 py-2.5 px-2 rounded-2xl text-[11.5px] font-medium border border-slate-200 text-slate-600 text-center leading-tight">Diagnostik</button>
+      <button onclick="switchLeistungenTab(2)" class="leistungen-tab flex-1 py-2.5 px-2 rounded-2xl text-[11.5px] font-medium border border-slate-200 text-slate-600 text-center leading-tight">Verfahren</button>
+    </div>
+
     <!-- 3-column card grid -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="leistungen-grid">
 
       <!-- Card 1: Akute Schmerztherapie -->
-      <div class="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 lg:p-7 flex flex-col">
+      <div class="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 lg:p-7 flex flex-col tab-active">
         <div class="w-10 h-10 rounded-xl grid place-items-center mb-4" style="background: var(--primary-soft); color: var(--primary)">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
         </div>
@@ -717,16 +733,17 @@ const tableEl = document.getElementById("hours-table");
 HOURS.forEach(([day, time], i) => {
   const isToday = i === todayIdx;
   const li = document.createElement("li");
-  li.className = "flex items-center justify-between py-3.5";
+  li.className = "flex items-start justify-between gap-3 py-3.5";
   const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary').trim() || '#0F766E';
+  const timeDisplay = time.includes(' · ') ? time.split(' · ').join('<br>') : time;
   li.innerHTML = `
     <span class="text-[15px] ${isToday ? "font-semibold" : "font-medium text-slate-800"}"
           style="${isToday ? "color:#0F766E" : ""}">
       ${day}
       ${isToday ? `<span class="ml-2.5 inline-block text-[10px] font-semibold tracking-[0.1em] uppercase px-2 py-[3px] rounded-full text-white" style="background:#0F766E">Heute</span>` : ""}
     </span>
-    <span class="text-[14px] tabular-nums ${time === "geschlossen" ? "italic text-slate-400" : "text-slate-600"}">
-      ${time}
+    <span class="text-[13.5px] tabular-nums text-right leading-[1.55] shrink-0 ${time === "geschlossen" ? "italic text-slate-400" : "text-slate-600"}">
+      ${timeDisplay}
     </span>
   `;
   tableEl.appendChild(li);
@@ -799,6 +816,18 @@ function loadGoogleMaps() {
 // Karte automatisch laden, wenn Einwilligung bereits erteilt wurde
 if (localStorage.getItem('maps-consent') === '1') {
   document.addEventListener('DOMContentLoaded', loadGoogleMaps);
+}
+
+// ─── Leistungen mobile tabs ────────────────────────────────────
+function switchLeistungenTab(n) {
+  document.querySelectorAll('#leistungen-grid > div').forEach((el, i) => {
+    el.classList.toggle('tab-active', i === n);
+  });
+  document.querySelectorAll('.leistungen-tab').forEach((btn, i) => {
+    btn.classList.toggle('tab-active-btn', i === n);
+    if (i !== n) btn.classList.add('text-slate-600');
+    else btn.classList.remove('text-slate-600');
+  });
 }
 
 // ─── Contact form (mailto fallback) ────────────────────────────
