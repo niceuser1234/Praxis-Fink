@@ -1,5 +1,17 @@
 [
   {
+    "type": "urlaub",
+    "date": "21.05.–25.05.",
+    "title": "Praxis geschlossen – Urlaub",
+    "body": "Die Praxis ist vom 21. bis 25. Mai 2026 im Urlaub. Ab dem 26. Mai sind wir wieder für Sie da."
+  },
+  {
+    "type": "barriere",
+    "date": "aktuell",
+    "title": "Eingeschränkte Barrierefreiheit",
+    "body": "Die Hauptstraße ist derzeit Baustelle. Der Zugang zur Praxis kann zeitweise erschwert sein. Rollstuhlfahrer und Geheingeschränkte empfehlen wir, eine Begleitung mitzubringen."
+  },
+  {
     "type": "neu",
     "date": "12.05.",
     "title": "Online-Terminbuchung über Doctolib",

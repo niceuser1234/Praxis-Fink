@@ -303,7 +303,7 @@
             Klaus Fink
           </div>
           <div class="text-[14px] text-slate-600 leading-[1.55] mb-5">
-            Facharzt für <span class="text-slate-800 font-medium">Orthopädie &amp; Chirotherapie</span><br>
+            Facharzt für <span class="text-slate-800 font-medium">Orthopädie, Akupunktur und Chirotherapie</span><br>
             Über 20 Jahre Erfahrung in Mölln.
           </div>
           <div class="flex items-center gap-1.5 mb-5">
@@ -395,15 +395,11 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><rect width="7" height="5" x="7" y="7" rx="1"/><rect width="7" height="5" x="10" y="12" rx="1"/></svg>
         </div>
         <div class="font-semibold text-slate-900 text-[17px] leading-tight mb-2">Diagnostik &amp; Bildgebung</div>
-        <div class="text-[13.5px] text-slate-500 leading-snug mb-5">Klare Antworten direkt vor Ort, digital, schnell, ohne erneute Termine.</div>
+        <div class="text-[13.5px] text-slate-500 leading-snug mb-5">Klare Antworten direkt vor Ort — digital und schnell.</div>
         <div class="border-t border-slate-100 pt-5 flex flex-col gap-3.5">
           <div class="flex gap-3">
             <div class="mt-[7px] w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
             <div class="text-[13.5px] leading-[1.55]"><span class="font-semibold text-slate-900">Digitales Röntgen:</span><span class="text-slate-600"> Strahlungsarme Aufnahmen in der Praxis.</span></div>
-          </div>
-          <div class="flex gap-3">
-            <div class="mt-[7px] w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
-            <div class="text-[13.5px] leading-[1.55]"><span class="font-semibold text-slate-900">Sonographie (Ultraschall):</span><span class="text-slate-600"> Gelenke, Sehnen, Muskeln.</span></div>
           </div>
           <div class="flex gap-3">
             <div class="mt-[7px] w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
@@ -435,10 +431,6 @@
           <div class="flex gap-3">
             <div class="mt-[7px] w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
             <div class="text-[13.5px] leading-[1.55]"><span class="font-semibold text-slate-900">Akupunktur (Körper &amp; Ohr):</span><span class="text-slate-600"> Anerkannte Schmerzakupunktur bei chronischen Rücken- und Knieschmerzen.</span></div>
-          </div>
-          <div class="flex gap-3">
-            <div class="mt-[7px] w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
-            <div class="text-[13.5px] leading-[1.55]"><span class="font-semibold text-slate-900">Kinderorthopädie:</span><span class="text-slate-600"> Fehlhaltungen, X- und O-Beine, Hüftscreening.</span></div>
           </div>
         </div>
       </div>
@@ -657,7 +649,7 @@
       <div>
         <div class="flex items-center gap-3 mb-3">
           <span class="w-9 h-9 rounded-xl grid place-items-center font-serif italic text-lg text-white shadow-sm"
-                style="background: linear-gradient(135deg, var(--primary), var(--accent))">F</span>
+                style="background: linear-gradient(135deg, var(--primary), var(--accent))">K</span>
           <span class="font-semibold text-white text-[15px]">Klaus Fink</span>
         </div>
         <p class="text-[14px] leading-[1.65] max-w-[34ch]" style="color:rgba(255,255,255,0.65)">
@@ -713,17 +705,20 @@
 const HOURS = [
   ["Montag",     "08:00 – 12:00 · 13:00 – 15:00"],
   ["Dienstag",   "08:00 – 12:00 · 13:00 – 15:00"],
-  ["Mittwoch",   "08:00 – 12:00"],
+  ["Mittwoch",   "08:00 – 13:00"],
   ["Donnerstag", "08:00 – 13:00 · 14:00 – 17:00"],
-  ["Freitag",    "08:00 – 12:00"],
+  ["Freitag",    "08:00 – 13:00"],
   ["Samstag",    "geschlossen"],
   ["Sonntag",    "geschlossen"],
 ];
 
 // ─── Compute today ─────────────────────────────────────────────
+const VACATION_UNTIL = "2026-05-25"; // set to null or "" to disable
 const todayIdx = (new Date().getDay() + 6) % 7; // 0=Mon
 const todayData = HOURS[todayIdx];
-const isOpenToday = todayData[1] !== "geschlossen";
+const todayStr = new Date().toISOString().split('T')[0];
+const isVacation = VACATION_UNTIL && todayStr <= VACATION_UNTIL;
+const isOpenToday = !isVacation && todayData[1] !== "geschlossen";
 
 
 // Build hours table
@@ -848,8 +843,9 @@ function switchLeistungenTab(n) {
   const BADGE = {
     hinweis: { bg: '#7DD3FC', color: '#0C4A6E', label: 'Hinweis' },
     wichtig:  { bg: '#FECACA', color: '#7F1D1D', label: 'Wichtig' },
-    urlaub:   { bg: '#FDE68A', color: '#78350F', label: 'Urlaub'  },
-    neu:      { bg: '#BBF7D0', color: '#14532D', label: 'Neu'     },
+    urlaub:   { bg: '#FDE68A', color: '#78350F', label: 'Urlaub'   },
+    neu:      { bg: '#BBF7D0', color: '#14532D', label: 'Neu'      },
+    barriere: { bg: '#E9D5FF', color: '#4C1D95', label: 'Barriere' },
     info:     { bg: 'rgba(255,255,255,0.18)', color: '#fff', label: 'Info' },
   };
   fetch('news.json')
