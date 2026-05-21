@@ -38,7 +38,7 @@ export default function Nav() {
                 background: `linear-gradient(135deg, ${palette.primary}, ${palette.accent})`,
               }}
             >
-              F
+              K
             </span>
             <span className="flex flex-col leading-tight">
               <span className="font-semibold text-slate-900 text-[15px] tracking-tight">

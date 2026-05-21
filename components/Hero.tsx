@@ -109,7 +109,7 @@ export default function Hero() {
 
               <div className="text-[14px] text-slate-600 leading-[1.55] mb-5">
                 Facharzt für{" "}
-                <span className="text-slate-800 font-medium">Orthopädie &amp; Chirotherapie</span>.<br />
+                <span className="text-slate-800 font-medium">Orthopädie, Akupunktur und Chirotherapie</span>.<br />
                 Über 17 Jahre Erfahrung in Mölln.
               </div>
 

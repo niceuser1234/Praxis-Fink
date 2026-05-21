@@ -37,7 +37,7 @@ export default function Footer() {
                   background: `linear-gradient(135deg, ${palette.primary}, ${palette.accent})`,
                 }}
               >
-                F
+                K
               </span>
               <div className="flex flex-col leading-tight">
                 <span className="font-semibold text-[15px]">Dr. Klaus Fink</span>

@@ -2,12 +2,14 @@
 
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { palette } from "@/lib/palette";
-import { HOURS } from "@/lib/data";
+import { HOURS, VACATION_UNTIL } from "@/lib/data";
 
 export default function QuickInfo() {
   const todayIdx = (new Date().getDay() + 6) % 7; // 0 = Monday
   const todayHours = HOURS[todayIdx];
-  const isOpenToday = todayHours[1] !== "geschlossen";
+  const todayStr = new Date().toISOString().split("T")[0];
+  const isVacation = !!VACATION_UNTIL && todayStr <= VACATION_UNTIL;
+  const isOpenToday = !isVacation && todayHours[1] !== "geschlossen";
 
   return (
     <section className="pb-20 lg:pb-24 -mt-2">
@@ -46,7 +48,9 @@ export default function QuickInfo() {
               >
                 {todayHours[0]}
               </div>
-              <div className="text-[16px] text-slate-600">{todayHours[1]}</div>
+              <div className="text-[16px] text-slate-600">
+                {isVacation ? "Urlaub bis 25.05." : todayHours[1]}
+              </div>
             </div>
 
             <a
