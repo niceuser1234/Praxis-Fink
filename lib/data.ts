@@ -88,16 +88,4 @@ export const NEWS: NewsItem[] = [
     title: "Sommerurlaub der Praxis",
     body: "Akutversorgung übernimmt in dieser Zeit die Praxis Dr. Müller, Ratzeburger Allee 12 · Tel. 04541 1234.",
   },
-  {
-    tag: "Wichtig", tagBg: "#FECACA", tagFg: "#7F1D1D",
-    date: "heute",
-    title: "FFP2-Maske empfohlen",
-    body: "In den Behandlungsräumen empfehlen wir weiterhin das Tragen einer Maske — zum Schutz aller Patient:innen.",
-  },
-  {
-    tag: "Barriere", tagBg: "#E9D5FF", tagFg: "#4C1D95",
-    date: "aktuell",
-    title: "Eingeschränkte Barrierefreiheit – Baustelle",
-    body: "Die Hauptstraße ist derzeit Baustelle. Der Zugang zur Praxis kann zeitweise erschwert sein. Rollstuhlfahrer und Geheingeschränkte empfehlen wir, eine Begleitung mitzubringen.",
-  },
 ];
