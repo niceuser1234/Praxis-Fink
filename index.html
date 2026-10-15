@@ -279,14 +279,14 @@
         <div class="eyebrow mb-4">Unsere Leistungen</div>
         <h2 class="heading">Was wir für Sie tun.</h2>
       </div>
-      <p class="lead max-w-[48ch]">
-        Drei Schwerpunkte: von akuter Hilfe über klare Diagnostik bis zu modernen, schonenden Verfahren.
+      <p class="font-serif text-[1.375rem] lg:text-[1.625rem] leading-snug text-slate-700 border-l-2 border-brand pl-5 lg:pl-6 max-w-[38ch]">
+        <em class="italic text-brand">Drei Schwerpunkte:</em> von akuter Hilfe über klare Diagnostik bis zu modernen, schonenden Verfahren.
       </p>
     </div>
 
-    <div class="grid lg:grid-cols-[minmax(300px,380px)_1fr] gap-6 lg:gap-10 items-start">
+    <div>
 
-      <div class="flex flex-col gap-3" role="tablist" aria-label="Leistungsbereiche" aria-orientation="vertical">
+      <div class="grid lg:grid-cols-3 gap-3 lg:gap-4 mb-4 lg:mb-5" role="tablist" aria-label="Leistungsbereiche">
         <button class="tab-btn group flex items-center gap-4 w-full rounded-2xl p-5 border" role="tab" id="tab-0" aria-controls="panel-0" aria-selected="true" onclick="switchLeistungenTab(0)">
           <span class="tab-icon w-11 h-11 shrink-0 rounded-xl grid place-items-center">
             <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
@@ -294,9 +294,7 @@
           <span class="flex-1">
             <span class="block font-semibold text-[17px]">Akute Schmerztherapie</span>
             <span class="tab-sub block text-sm">Schnelle Hilfe, meist in 24–48 Std.</span>
-          </span>
-          <svg aria-hidden="true" class="tab-arrow shrink-0" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-        </button>
+          </span>        </button>
         <button class="tab-btn group flex items-center gap-4 w-full rounded-2xl p-5 border" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="false" onclick="switchLeistungenTab(1)">
           <span class="tab-icon w-11 h-11 shrink-0 rounded-xl grid place-items-center">
             <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><rect width="7" height="5" x="7" y="7" rx="1"/><rect width="7" height="5" x="10" y="12" rx="1"/></svg>
@@ -304,9 +302,7 @@
           <span class="flex-1">
             <span class="block font-semibold text-[17px]">Diagnostik &amp; Bildgebung</span>
             <span class="tab-sub block text-sm">Klare Antworten direkt vor Ort</span>
-          </span>
-          <svg aria-hidden="true" class="tab-arrow shrink-0" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-        </button>
+          </span>        </button>
         <button class="tab-btn group flex items-center gap-4 w-full rounded-2xl p-5 border" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false" onclick="switchLeistungenTab(2)">
           <span class="tab-icon w-11 h-11 shrink-0 rounded-xl grid place-items-center">
             <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
@@ -314,20 +310,14 @@
           <span class="flex-1">
             <span class="block font-semibold text-[17px]">Spezielle Verfahren</span>
             <span class="tab-sub block text-sm">Wenn Standardtherapie nicht reicht</span>
-          </span>
-          <svg aria-hidden="true" class="tab-arrow shrink-0" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-        </button>
-
-        <div class="hidden lg:block mt-3 rounded-2xl overflow-hidden aspect-[4/3]">
-          <img src="Spine.webp" alt="" class="w-full h-full object-cover object-[35%_50%]">
-        </div>
+          </span>        </button>
       </div>
 
       <div>
         <div class="tab-panel is-active bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 lg:p-12" role="tabpanel" id="panel-0" aria-labelledby="tab-0">
           <h3 class="font-serif text-3xl text-slate-900 mb-2">Akute Schmerztherapie</h3>
           <p class="text-slate-500 mb-8">Schnelle Hilfe bei plötzlichen Beschwerden, meist innerhalb von <span class="whitespace-nowrap">24–48 Std.</span></p>
-          <ul class="grid sm:grid-cols-2 gap-x-10 gap-y-7">
+          <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-8">
             <li><div class="flex gap-2.5 font-semibold text-slate-900 mb-1.5"><svg aria-hidden="true" class="mt-0.5 shrink-0 text-brand" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Akutsprechstunde</div><p class="text-[15px] leading-relaxed text-slate-600 pl-7">Reservierte Slots für neu aufgetretene starke Schmerzen. Bitte telefonisch melden.</p></li>
             <li><div class="flex gap-2.5 font-semibold text-slate-900 mb-1.5"><svg aria-hidden="true" class="mt-0.5 shrink-0 text-brand" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Rücken- &amp; Wirbelsäulenschmerzen</div><p class="text-[15px] leading-relaxed text-slate-600 pl-7">Bandscheibe, Ischias, Hexenschuss, Blockaden. Konservative Erstbehandlung in einer Sitzung.</p></li>
             <li><div class="flex gap-2.5 font-semibold text-slate-900 mb-1.5"><svg aria-hidden="true" class="mt-0.5 shrink-0 text-brand" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Knie- &amp; Schulterschmerzen</div><p class="text-[15px] leading-relaxed text-slate-600 pl-7">Schmerzdiagnose, Punktion, Infiltration sowie Kortison- oder Hyalurontherapie nach Bedarf.</p></li>
@@ -339,7 +329,7 @@
         <div class="tab-panel bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 lg:p-12" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
           <h3 class="font-serif text-3xl text-slate-900 mb-2">Diagnostik &amp; Bildgebung</h3>
           <p class="text-slate-500 mb-8">Klare Antworten direkt vor Ort — digital und schnell.</p>
-          <ul class="grid sm:grid-cols-2 gap-x-10 gap-y-7">
+          <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-8">
             <li><div class="flex gap-2.5 font-semibold text-slate-900 mb-1.5"><svg aria-hidden="true" class="mt-0.5 shrink-0 text-brand" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Digitales Röntgen</div><p class="text-[15px] leading-relaxed text-slate-600 pl-7">Strahlungsarme Aufnahmen in der Praxis.</p></li>
             <li><div class="flex gap-2.5 font-semibold text-slate-900 mb-1.5"><svg aria-hidden="true" class="mt-0.5 shrink-0 text-brand" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Ganganalyse &amp; Haltungsdiagnostik</div><p class="text-[15px] leading-relaxed text-slate-600 pl-7">Für Beschwerden an Knie, Hüfte und Rücken, inkl. Einlagen-Empfehlung.</p></li>
             <li><div class="flex gap-2.5 font-semibold text-slate-900 mb-1.5"><svg aria-hidden="true" class="mt-0.5 shrink-0 text-brand" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>OP-Beratung &amp; Zweitmeinung</div><p class="text-[15px] leading-relaxed text-slate-600 pl-7">Zweite Meinung vor geplanten orthopädischen Eingriffen.</p></li>
@@ -349,16 +339,19 @@
         <div class="tab-panel bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 lg:p-12" role="tabpanel" id="panel-2" aria-labelledby="tab-2">
           <h3 class="font-serif text-3xl text-slate-900 mb-2">Spezielle Verfahren</h3>
           <p class="text-slate-500 mb-8">Moderne konservative Methoden, wenn Standardtherapie nicht reicht.</p>
-          <ul class="grid sm:grid-cols-2 gap-x-10 gap-y-7">
+          <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-8">
             <li><div class="flex gap-2.5 font-semibold text-slate-900 mb-1.5"><svg aria-hidden="true" class="mt-0.5 shrink-0 text-brand" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Stoßwellentherapie</div><p class="text-[15px] leading-relaxed text-slate-600 pl-7">Fersensporn, Tennisellbogen, chronische Sehnenreizungen. Meist 3–5 Sitzungen.</p></li>
             <li><div class="flex gap-2.5 font-semibold text-slate-900 mb-1.5"><svg aria-hidden="true" class="mt-0.5 shrink-0 text-brand" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Hyaluronsäure-Behandlung</div><p class="text-[15px] leading-relaxed text-slate-600 pl-7">Bei Arthrose im Knie oder an der Schulter. Schmerzlinderung über Monate.</p></li>
             <li><div class="flex gap-2.5 font-semibold text-slate-900 mb-1.5"><svg aria-hidden="true" class="mt-0.5 shrink-0 text-brand" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Akupunktur (Körper &amp; Ohr)</div><p class="text-[15px] leading-relaxed text-slate-600 pl-7">Anerkannte Schmerzakupunktur bei chronischen Rücken- und Knieschmerzen.</p></li>
           </ul>
         </div>
 
-        <div class="mt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-2xl bg-brand-50 border border-brand-100 px-6 py-5">
-          <p class="text-[15px] text-slate-700">Akute Beschwerden? Wir haben reservierte Slots in der Akutsprechstunde.</p>
-          <a href="tel:+4945426026" class="btn-primary !h-11 shrink-0">04542 6026 anrufen</a>
+        <div class="mt-4 lg:mt-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-2xl bg-brand-50 border border-brand-100 px-6 py-5 lg:px-8">
+          <p class="text-[15px] text-slate-700">Termine vergeben wir bevorzugt online. Wählen Sie Ihren Wunschtermin direkt bei Doctolib.</p>
+          <a href="https://www.doctolib.de/orthopadie/moelln/klaus-fink" target="_blank" rel="noopener" class="btn-primary !h-11 shrink-0">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="m9 16 2 2 4-4"/></svg>
+            Termin online buchen
+          </a>
         </div>
       </div>
 
@@ -683,9 +676,7 @@ function switchLeistungenTab(n) {
     btn.classList.add(...(on ? TAB_ON : TAB_OFF));
     const icon = btn.querySelector('.tab-icon');
     icon.className = 'tab-icon w-11 h-11 shrink-0 rounded-xl grid place-items-center ' + (on ? 'bg-white/15 text-white' : 'bg-brand-100 text-brand');
-    btn.querySelector('.tab-sub').className = 'tab-sub block text-sm ' + (on ? 'text-white/75' : 'text-slate-500');
-    btn.querySelector('.tab-arrow').setAttribute('class', 'tab-arrow shrink-0 ' + (on ? 'text-white' : 'text-slate-400'));
-  });
+    btn.querySelector('.tab-sub').className = 'tab-sub block text-sm ' + (on ? 'text-white/75' : 'text-slate-500');  });
 }
 switchLeistungenTab(0);
 
