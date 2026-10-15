@@ -1,3 +1,46 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html { scroll-padding-top: 88px; }
+  body { @apply bg-slate-50 text-slate-900 font-sans antialiased; }
+  h1, h2 { text-wrap: balance; }
+  :focus-visible {
+    outline: 2px solid theme('colors.brand.DEFAULT');
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+  }
+}
+
+@layer components {
+  .wrap { @apply max-w-site mx-auto px-5 sm:px-8 lg:px-12; }
+  .section { @apply py-20 lg:py-28; }
+  .eyebrow { @apply text-xs font-semibold uppercase tracking-[0.16em] text-brand; }
+  .heading { @apply font-serif font-normal text-h2 text-slate-900; }
+  .lead { @apply text-lg leading-relaxed text-slate-600; }
+
+  .btn { @apply inline-flex items-center justify-center gap-2 h-12 px-6 rounded-full text-[15px] font-medium whitespace-nowrap transition-colors; }
+  .btn-primary { @apply btn bg-brand text-white hover:bg-brand-700; }
+  .btn-outline { @apply btn border border-slate-300 text-slate-800 hover:bg-white hover:border-slate-400; }
+  .btn-light { @apply btn bg-white text-brand-900 hover:bg-brand-50; }
+
+  .logo-mark { @apply h-10 px-3 rounded-xl grid place-items-center bg-brand text-white font-serif italic text-[15px] whitespace-nowrap; }
+
+  .skip-link { @apply sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:px-4 focus:py-2 focus:rounded-lg focus:bg-white focus:text-slate-900 focus:shadow; }
+
+  #site-header { @apply sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200; }
+
+  #mobile-menu { display: none; }
+  #mobile-menu.open { display: block; }
+
+  .tab-btn { @apply text-left transition-colors; }
+  .tab-panel:not(.is-active) { display: none; }
+}
+
+@media (min-width: 1024px) {
+  .hero-min { min-height: min(calc(100svh - 7.5rem), 780px); }
+}

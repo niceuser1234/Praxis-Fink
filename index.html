@@ -9,7 +9,7 @@
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<meta name="theme-color" content="#0F766E">
+<meta name="theme-color" content="#0F6B63">
 <link rel="canonical" href="https://www.ortho-fink.de/">
 
 <!-- Open Graph -->
@@ -90,348 +90,271 @@
 </script>
 
 <link rel="stylesheet" href="fonts/fonts.css">
-
 <link rel="stylesheet" href="styles.css">
-
-<style>
-  :root {
-    --primary:       #0F766E;
-    --primary-hover: #115E59;
-    --primary-soft:  #CCFBF1;
-    --primary-softer:#F0FDFA;
-    --primary-ink:   #134E4A;
-    --accent:        #0891B2;
-  }
-
-  html, body {
-    font-family: 'Inter', system-ui, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    background: #FAFAF7;
-    color: #0F1B2D;
-  }
-  .font-serif { font-family: 'Newsreader', Georgia, serif; }
-
-  /* Smooth transitions */
-  * { box-sizing: border-box; }
-
-  /* Mobile menu */
-  #mobile-menu { display: none; }
-  #mobile-menu.open { display: block; }
-
-  /* Nav scroll */
-  #site-header {
-    position: sticky; top: 0; z-index: 40;
-    transition: background 200ms, border-color 200ms, backdrop-filter 200ms;
-  }
-  #site-header.scrolled {
-    background: rgba(255,255,255,0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(148,163,184,0.3);
-  }
-
-  /* Hover lift */
-  .btn-lift { transition: transform 150ms, box-shadow 150ms; }
-  .btn-lift:hover { transform: translateY(-1px); }
-
-  /* Today highlight in hours table */
-  .hours-today { font-weight: 600; }
-
-  /* Arrow animation */
-  .arrow-anim { transition: transform 150ms; }
-  .group:hover .arrow-anim { transform: translate(2px,-2px); }
-
-  /* Leistungen mobile tabs */
-  .leistungen-tab { transition: background 150ms, color 150ms, border-color 150ms; }
-  .leistungen-tab.tab-active-btn {
-    background: var(--primary); color: #fff; border-color: var(--primary);
-  }
-  @media (max-width: 767px) {
-    #leistungen-grid > div:not(.tab-active) { display: none; }
-  }
-</style>
 </head>
 <body>
+
+<a href="#main" class="skip-link">Zum Inhalt springen</a>
+
+<!-- Hinweis-Leiste: zeigt automatisch den ersten Eintrag aus news.json -->
+<div id="notice-bar" class="bg-brand-900 text-white" hidden>
+  <div class="wrap py-2.5 flex items-center justify-center gap-3 text-sm">
+    <span id="notice-label" class="hidden sm:inline-flex shrink-0 px-2 py-0.5 rounded-full bg-white/15 text-xs font-semibold uppercase tracking-[0.08em]"></span>
+    <span id="notice-text" class="truncate"></span>
+    <a href="#aktuelles" class="shrink-0 font-medium underline underline-offset-4 decoration-white/40 hover:decoration-white">Alle Hinweise</a>
+  </div>
+</div>
 
 <!-- ═══════════════════════════════════════════════════════════
      NAV
 ═══════════════════════════════════════════════════════════ -->
 <header id="site-header">
-  <div class="max-w-6xl mx-auto px-6 lg:px-8 h-[72px] flex items-center justify-between">
+  <div class="wrap h-[76px] flex items-center justify-between gap-4">
 
-    <!-- Logo -->
-    <a href="/" class="flex items-center gap-3 group">
-      <span class="h-10 px-3 rounded-2xl grid place-items-center font-serif italic text-white shadow-sm flex-shrink-0"
-            style="background: linear-gradient(135deg, var(--primary), var(--accent)); font-size: 15px; letter-spacing: 0.02em; white-space: nowrap">K. F.</span>
-      <span class="flex flex-col leading-tight">
-        <span class="font-semibold text-slate-900 text-[15px] tracking-tight">Klaus Fink</span>
-        <span class="text-[11px] text-slate-500 tracking-wide">Orthopädische Praxis · Mölln</span>
+    <a href="/" class="flex items-center gap-3 min-w-0">
+      <span class="logo-mark">K. F.</span>
+      <span class="flex flex-col leading-tight min-w-0">
+        <span class="font-semibold text-slate-900 text-[15px]">Klaus Fink</span>
+        <span class="hidden sm:block text-xs text-slate-500">Orthopädische Praxis · Mölln</span>
       </span>
     </a>
 
-    <!-- Desktop nav links -->
-    <nav class="hidden lg:flex items-center gap-9" aria-label="Hauptnavigation">
-      <a href="#leistungen" class="text-[14.5px] text-slate-600 hover:text-slate-900 transition-colors">Leistungen</a>
-      <a href="#praxis"     class="text-[14.5px] text-slate-600 hover:text-slate-900 transition-colors">Praxis</a>
-      <a href="#sprechzeiten" class="text-[14.5px] text-slate-600 hover:text-slate-900 transition-colors">Sprechzeiten</a>
-      <a href="#aktuelles"  class="text-[14.5px] text-slate-600 hover:text-slate-900 transition-colors">Aktuelles</a>
-      <a href="#kontakt"    class="text-[14.5px] text-slate-600 hover:text-slate-900 transition-colors">Kontakt</a>
+    <nav class="hidden lg:flex items-center gap-8" aria-label="Hauptnavigation">
+      <a href="#leistungen"   class="text-[15px] text-slate-600 hover:text-brand transition-colors">Leistungen</a>
+      <a href="#praxis"       class="text-[15px] text-slate-600 hover:text-brand transition-colors">Praxis</a>
+      <a href="#sprechzeiten" class="text-[15px] text-slate-600 hover:text-brand transition-colors">Sprechzeiten</a>
+      <a href="#aktuelles"    class="text-[15px] text-slate-600 hover:text-brand transition-colors">Aktuelles</a>
+      <a href="#kontakt"      class="text-[15px] text-slate-600 hover:text-brand transition-colors">Kontakt</a>
     </nav>
 
-    <!-- Desktop CTA row -->
-    <div class="flex items-center gap-2">
-      <a href="tel:+4945426026"
-         class="hidden md:inline-flex items-center gap-2 px-3.5 py-2 rounded-full text-[13.5px] font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-100 transition">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.45 2 2 0 0 1 3.57 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9A16 16 0 0 0 15 16.09l1.09-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    <div class="flex items-center gap-2 shrink-0">
+      <a href="tel:+4945426026" class="hidden md:inline-flex items-center gap-2 h-11 px-4 rounded-full text-[15px] font-medium text-slate-700 hover:bg-slate-100 transition-colors">
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.45 2 2 0 0 1 3.57 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9A16 16 0 0 0 15 16.09l1.09-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         04542 6026
       </a>
-      <a href="https://www.doctolib.de/orthopadie/moelln/klaus-fink"
-         target="_blank" rel="noopener"
-         class="btn-lift hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[14px] font-medium text-white shadow-sm"
-         style="background: linear-gradient(135deg, var(--primary), var(--accent))">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="m9 16 2 2 4-4"/></svg>
-        Termin buchen
+      <a href="https://www.doctolib.de/orthopadie/moelln/klaus-fink" target="_blank" rel="noopener" class="btn-primary !h-11 !px-4 sm:!px-5">
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="m9 16 2 2 4-4"/></svg>
+        <span class="sm:hidden">Termin</span><span class="hidden sm:inline">Termin buchen</span>
       </a>
-      <!-- Hamburger -->
-      <button id="menu-toggle" class="lg:hidden p-2 rounded-lg text-slate-700" aria-label="Menü öffnen">
-        <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-        <svg id="menu-icon-close" class="hidden" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      <button id="menu-toggle" class="lg:hidden w-11 h-11 grid place-items-center rounded-full text-slate-700 hover:bg-slate-100" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+        <svg id="menu-icon-open" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        <svg id="menu-icon-close" aria-hidden="true" class="hidden" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
       </button>
     </div>
   </div>
 
-  <!-- Mobile menu -->
-  <div id="mobile-menu" class="lg:hidden border-t border-slate-200/70 bg-white">
-    <div class="px-6 py-4 flex flex-col gap-1">
-      <a href="#leistungen"  class="py-2 text-slate-700 text-[15px]">Leistungen</a>
-      <a href="#praxis"      class="py-2 text-slate-700 text-[15px]">Praxis</a>
-      <a href="#sprechzeiten" class="py-2 text-slate-700 text-[15px]">Sprechzeiten</a>
-      <a href="#aktuelles"   class="py-2 text-slate-700 text-[15px]">Aktuelles</a>
-      <a href="#kontakt"     class="py-2 text-slate-700 text-[15px]">Kontakt</a>
-    </div>
-    <div class="px-6 pb-5 pt-3 border-t border-slate-100 flex flex-col gap-2.5">
-      <a href="tel:+4945426026"
-         class="flex items-center justify-center gap-2 px-4 py-3 rounded-2xl text-[14.5px] font-medium border border-slate-200 text-slate-700 hover:bg-slate-50 transition">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.45 2 2 0 0 1 3.57 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9A16 16 0 0 0 15 16.09l1.09-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        04542 6026 anrufen
-      </a>
-      <a href="https://www.doctolib.de/orthopadie/moelln/klaus-fink"
-         target="_blank" rel="noopener"
-         class="btn-lift flex items-center justify-center gap-2 px-4 py-3 rounded-2xl text-[14.5px] font-semibold text-white shadow-sm"
-         style="background: linear-gradient(135deg, var(--primary), var(--accent))">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="m9 16 2 2 4-4"/></svg>
-        Termin online buchen
-      </a>
+  <div id="mobile-menu" class="lg:hidden border-t border-slate-200 bg-white">
+    <nav class="wrap py-3 flex flex-col" aria-label="Mobile Navigation">
+      <a href="#leistungen"   class="py-3 text-base text-slate-800">Leistungen</a>
+      <a href="#praxis"       class="py-3 text-base text-slate-800">Praxis</a>
+      <a href="#sprechzeiten" class="py-3 text-base text-slate-800">Sprechzeiten</a>
+      <a href="#aktuelles"    class="py-3 text-base text-slate-800">Aktuelles</a>
+      <a href="#kontakt"      class="py-3 text-base text-slate-800">Kontakt</a>
+    </nav>
+    <div class="wrap pb-5 pt-4 border-t border-slate-100 flex flex-col gap-3">
+      <a href="tel:+4945426026" class="btn-outline w-full">04542 6026 anrufen</a>
+      <a href="https://www.doctolib.de/orthopadie/moelln/klaus-fink" target="_blank" rel="noopener" class="btn-primary w-full">Termin online buchen</a>
     </div>
   </div>
 </header>
 
-<main>
+<main id="main">
 
 <!-- ═══════════════════════════════════════════════════════════
-     HERO
+     HERO — Split über die volle Breite
 ═══════════════════════════════════════════════════════════ -->
-<section class="relative pt-6 lg:pt-10 pb-10 lg:pb-14">
-  <div class="max-w-6xl mx-auto px-6 lg:px-8">
-    <div class="relative overflow-hidden rounded-[36px] px-7 py-14 lg:px-20 lg:py-24"
-         style="background: linear-gradient(135deg, var(--primary-ink) 0%, var(--primary) 60%, var(--accent) 100%)">
+<section class="grid lg:grid-cols-2 hero-min">
 
-      <!-- Watermark F -->
-      <div class="absolute -right-8 -top-16 select-none pointer-events-none font-serif italic leading-none"
-           style="font-size: clamp(280px,32vw,460px); color: rgba(255,255,255,0.06)">F</div>
-
-      <div class="relative grid grid-cols-1 lg:grid-cols-[1.35fr_1fr] gap-10 lg:gap-12 items-center">
-
-        <!-- Left: Headline + CTAs -->
-        <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11.5px] font-medium tracking-[0.14em] uppercase mb-5 lg:mb-7"
-               style="background: rgba(255,255,255,0.14); color:#fff; backdrop-filter:blur(8px)">
-            <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
-            Orthopädie · Mölln
-          </div>
-
-          <h1 class="font-serif font-normal text-white leading-[1.04] tracking-[-0.015em] mb-5 lg:mb-7"
-              style="font-size: clamp(36px, 5.6vw, 76px)">
-            Ihre Praxis für<br>
-            <em class="italic" style="color: var(--primary-soft)">Orthopädie in Mölln.</em>
-          </h1>
-
-          <p class="text-[17px] leading-[1.65] mb-9 max-w-[48ch]" style="color:rgba(255,255,255,0.85)">
-            Ob Gelenke, Wirbelsäule oder Muskulatur: wir diagnostizieren und behandeln mit
-            konservativer Orthopädie, Chirotherapie und modernen Verfahren.
-          </p>
-
-          <div class="flex flex-wrap items-center gap-3 mb-6 lg:mb-9">
-            <a href="https://www.doctolib.de/orthopadie/moelln/klaus-fink" target="_blank" rel="noopener"
-               class="btn-lift inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full text-[15px] font-semibold shadow-lg"
-               style="background:#fff; color: var(--primary-ink)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="m9 16 2 2 4-4"/></svg>
-              Termin online buchen
-            </a>
-            <a href="tel:+4945426026"
-               class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full text-[15px] font-medium text-white border transition-all hover:bg-white/10"
-               style="border-color: rgba(255,255,255,0.3)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.45 2 2 0 0 1 3.57 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9A16 16 0 0 0 15 16.09l1.09-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              04542 6026
-            </a>
-          </div>
-
-          <div class="flex flex-wrap items-center gap-x-7 gap-y-3 pt-6" style="border-top: 1px solid rgba(255,255,255,0.15)">
-            <div class="inline-flex items-center gap-2 text-[13.5px]" style="color:rgba(255,255,255,0.85)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              Gesetzlich · Privat · Selbstzahler
-            </div>
-            <div class="inline-flex items-center gap-2 text-[13.5px]" style="color:rgba(255,255,255,0.85)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-              Hauptstraße 33, Mölln
-            </div>
-          </div>
-        </div>
-
-        <!-- Right: Doctor identity card -->
-        <div class="relative rounded-3xl bg-white/95 backdrop-blur p-6 lg:p-7"
-             style="box-shadow: 0 30px 80px -20px rgba(0,0,0,0.35)">
-          <div class="flex items-center justify-between mb-5">
-            <div class="text-[10.5px] font-semibold tracking-[0.12em] uppercase text-slate-500">Ihr Arzt</div>
-            <span id="hero-status-badge" class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-[10.5px] font-semibold tracking-[0.04em]"
-                  style="background: var(--primary-softer); color: var(--primary-ink)">
-              <span id="hero-status-dot" class="w-1.5 h-1.5 rounded-full" style="background: var(--primary)"></span>
-              <span id="hero-status-text">IN DER PRAXIS</span>
-            </span>
-          </div>
-          <div class="font-serif font-normal text-slate-900 leading-[1.08] mb-2" style="font-size:30px">
-            Klaus Fink
-          </div>
-          <div class="text-[14px] text-slate-600 leading-[1.55] mb-5">
-            Facharzt für <span class="text-slate-800 font-medium">Orthopädie, Akupunktur und Chirotherapie</span><br>
-            Über 20 Jahre Erfahrung in Mölln.
-          </div>
-          <div class="flex items-center gap-1.5 mb-5">
-            <span class="text-amber-500 tracking-[1px] text-[13px]">★★★★☆</span>
-            <span class="text-[13px] font-semibold text-slate-800">4,2</span>
-            <span class="text-[12.5px] text-slate-500">· 50 Google-Bewertungen</span>
-          </div>
-          <div class="grid grid-cols-2 gap-3 pt-5" style="border-top: 1px solid rgba(148,163,184,0.3)">
-            <div>
-              <div class="text-[10.5px] font-semibold tracking-[0.12em] uppercase text-slate-500 mb-1">Fachgebiet</div>
-              <div class="text-[13.5px] font-semibold text-slate-800 leading-snug">Orthopädie · Chirotherapie</div>
-            </div>
-            <div>
-              <div class="text-[10.5px] font-semibold tracking-[0.12em] uppercase text-slate-500 mb-1">In Mölln seit</div>
-              <div class="text-[13.5px] font-semibold text-slate-800 leading-snug">2003 · über 20 Jahre</div>
-            </div>
-          </div>
-        </div>
-
+  <div class="bg-sand flex items-center px-5 sm:px-8 lg:pr-16 lg:pl-[max(3rem,calc(50vw-37rem))] py-14 sm:py-16 lg:py-20">
+    <div class="max-w-xl">
+      <div class="eyebrow mb-6">Orthopädie · Mölln</div>
+      <h1 class="font-serif font-normal text-display text-slate-900 mb-7">
+        Ihre Praxis für <em class="italic text-brand">Orthopädie in&nbsp;Mölln.</em>
+      </h1>
+      <p class="lead max-w-[46ch] mb-10">
+        Ob Gelenke, Wirbelsäule oder Muskulatur: wir diagnostizieren und behandeln mit
+        konservativer Orthopädie, Chirotherapie und modernen Verfahren.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 mb-10">
+        <a href="https://www.doctolib.de/orthopadie/moelln/klaus-fink" target="_blank" rel="noopener" class="btn-primary">
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="m9 16 2 2 4-4"/></svg>
+          Termin online buchen
+        </a>
+        <a href="tel:+4945426026" class="btn-outline">
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.45 2 2 0 0 1 3.57 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9A16 16 0 0 0 15 16.09l1.09-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          04542 6026
+        </a>
+      </div>
+      <div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm">
+        <span class="text-amber-500 tracking-[1px]" aria-hidden="true">★★★★☆</span>
+        <span class="font-semibold text-slate-900">4,2</span>
+        <span class="text-slate-600">· 50 Google-Bewertungen</span>
       </div>
     </div>
+  </div>
+
+  <div class="relative min-h-[460px] sm:min-h-[560px] lg:min-h-0 bg-slate-200">
+    <img src="Klaus Portrait.jpeg" alt="Dr. Klaus Fink, Orthopäde in Mölln" class="absolute inset-0 w-full h-full object-cover object-[50%_18%]">
+    <div class="absolute left-4 right-4 bottom-4 sm:left-8 sm:right-auto sm:bottom-8 sm:max-w-sm rounded-2xl bg-white/95 backdrop-blur p-5 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.35)]">
+      <div class="flex items-start justify-between gap-4 mb-1">
+        <div class="font-serif text-2xl leading-tight text-slate-900">Klaus Fink</div>
+        <span id="hero-status-badge" class="mt-1 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-brand-100 text-brand-900 whitespace-nowrap">
+          <span id="hero-status-dot" class="w-1.5 h-1.5 rounded-full bg-brand"></span>
+          <span id="hero-status-text">In der Praxis</span>
+        </span>
+      </div>
+      <p class="text-sm leading-relaxed text-slate-600">
+        Facharzt für Orthopädie, Akupunktur und Chirotherapie.<br>Über 20 Jahre Erfahrung in Mölln.
+      </p>
+    </div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     AUF EINEN BLICK
+═══════════════════════════════════════════════════════════ -->
+<section aria-label="Auf einen Blick" class="bg-white border-b border-slate-200">
+  <div class="wrap grid sm:grid-cols-2 lg:grid-cols-4">
+
+    <a href="#sprechzeiten" class="group flex gap-4 py-7 sm:pr-6 border-b sm:border-b lg:border-b-0 lg:border-r border-slate-200">
+      <span class="w-11 h-11 shrink-0 rounded-full grid place-items-center bg-brand-100 text-brand">
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </span>
+      <span>
+        <span class="block text-sm text-slate-500 mb-0.5">Heute</span>
+        <span id="fact-today-status" class="block font-semibold text-slate-900 group-hover:text-brand">Jetzt geöffnet</span>
+        <span id="fact-today-hours" class="block text-sm text-slate-500 tabular-nums"></span>
+      </span>
+    </a>
+
+    <a href="tel:+4945426026" class="group flex gap-4 py-7 sm:pl-6 lg:px-6 border-b lg:border-b-0 lg:border-r border-slate-200">
+      <span class="w-11 h-11 shrink-0 rounded-full grid place-items-center bg-brand-100 text-brand">
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.45 2 2 0 0 1 3.57 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9A16 16 0 0 0 15 16.09l1.09-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </span>
+      <span>
+        <span class="block text-sm text-slate-500 mb-0.5">Telefon</span>
+        <span class="block font-semibold text-slate-900 group-hover:text-brand">04542 6026</span>
+        <span class="block text-sm text-slate-500">Bei akuten Schmerzen bitte direkt anrufen</span>
+      </span>
+    </a>
+
+    <a href="#kontakt" class="group flex gap-4 py-7 sm:pr-6 lg:px-6 border-b sm:border-b-0 lg:border-r border-slate-200">
+      <span class="w-11 h-11 shrink-0 rounded-full grid place-items-center bg-brand-100 text-brand">
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+      </span>
+      <span>
+        <span class="block text-sm text-slate-500 mb-0.5">Adresse</span>
+        <span class="block font-semibold text-slate-900 group-hover:text-brand">Hauptstraße 33, Mölln</span>
+        <span class="block text-sm text-slate-500">Parkhaus ca. 100&nbsp;m entfernt</span>
+      </span>
+    </a>
+
+    <a href="https://www.doctolib.de/orthopadie/moelln/klaus-fink" target="_blank" rel="noopener" class="group flex gap-4 py-7 sm:pl-6 lg:pr-0">
+      <span class="w-11 h-11 shrink-0 rounded-full grid place-items-center bg-brand-100 text-brand">
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="m9 16 2 2 4-4"/></svg>
+      </span>
+      <span>
+        <span class="block text-sm text-slate-500 mb-0.5">Termin</span>
+        <span class="block font-semibold text-slate-900 group-hover:text-brand">Online über Doctolib</span>
+        <span class="block text-sm text-slate-500">Gesetzlich · Privat · Selbstzahler</span>
+      </span>
+    </a>
+
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     SERVICES
+     LEISTUNGEN — Tabs
 ═══════════════════════════════════════════════════════════ -->
-<section id="leistungen" class="py-16 lg:py-24">
-  <div class="max-w-6xl mx-auto px-6 lg:px-8">
+<section id="leistungen" class="section">
+  <div class="wrap">
 
-    <!-- Intro block: full-width, left-aligned -->
-    <div class="mb-20">
-      <div class="text-[11.5px] font-semibold tracking-[0.14em] uppercase mb-4" style="color: var(--primary)">
-        UNSERE LEISTUNGEN
+    <div class="grid lg:grid-cols-[1fr_1fr] gap-6 lg:gap-16 items-end mb-12 lg:mb-16">
+      <div>
+        <div class="eyebrow mb-4">Unsere Leistungen</div>
+        <h2 class="heading">Was wir für Sie tun.</h2>
       </div>
-      <h2 class="font-serif font-normal text-slate-900 leading-[1.08] tracking-[-0.01em] mb-3"
-          style="font-size: clamp(30px, 3.2vw, 48px)">
-        Was wir für Sie tun.
-      </h2>
-      <p class="text-slate-600 text-[16px] leading-[1.65] max-w-[44ch]">
+      <p class="lead max-w-[48ch]">
         Drei Schwerpunkte: von akuter Hilfe über klare Diagnostik bis zu modernen, schonenden Verfahren.
       </p>
     </div>
 
-    <!-- Mobile tabs (hidden on md+) -->
-    <div class="flex gap-2 mb-5 md:hidden">
-      <button onclick="switchLeistungenTab(0)" class="leistungen-tab tab-active-btn flex-1 py-2.5 px-2 rounded-2xl text-[11.5px] font-medium border border-slate-200 text-center leading-tight">Schmerztherapie</button>
-      <button onclick="switchLeistungenTab(1)" class="leistungen-tab flex-1 py-2.5 px-2 rounded-2xl text-[11.5px] font-medium border border-slate-200 text-slate-600 text-center leading-tight">Diagnostik</button>
-      <button onclick="switchLeistungenTab(2)" class="leistungen-tab flex-1 py-2.5 px-2 rounded-2xl text-[11.5px] font-medium border border-slate-200 text-slate-600 text-center leading-tight">Verfahren</button>
-    </div>
+    <div class="grid lg:grid-cols-[minmax(300px,380px)_1fr] gap-6 lg:gap-10 items-start">
 
-    <!-- 3-column card grid -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="leistungen-grid">
+      <div class="flex flex-col gap-3" role="tablist" aria-label="Leistungsbereiche" aria-orientation="vertical">
+        <button class="tab-btn group flex items-center gap-4 w-full rounded-2xl p-5 border" role="tab" id="tab-0" aria-controls="panel-0" aria-selected="true" onclick="switchLeistungenTab(0)">
+          <span class="tab-icon w-11 h-11 shrink-0 rounded-xl grid place-items-center">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </span>
+          <span class="flex-1">
+            <span class="block font-semibold text-[17px]">Akute Schmerztherapie</span>
+            <span class="tab-sub block text-sm">Schnelle Hilfe, meist in 24–48 Std.</span>
+          </span>
+          <svg aria-hidden="true" class="tab-arrow shrink-0" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+        <button class="tab-btn group flex items-center gap-4 w-full rounded-2xl p-5 border" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="false" onclick="switchLeistungenTab(1)">
+          <span class="tab-icon w-11 h-11 shrink-0 rounded-xl grid place-items-center">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><rect width="7" height="5" x="7" y="7" rx="1"/><rect width="7" height="5" x="10" y="12" rx="1"/></svg>
+          </span>
+          <span class="flex-1">
+            <span class="block font-semibold text-[17px]">Diagnostik &amp; Bildgebung</span>
+            <span class="tab-sub block text-sm">Klare Antworten direkt vor Ort</span>
+          </span>
+          <svg aria-hidden="true" class="tab-arrow shrink-0" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+        <button class="tab-btn group flex items-center gap-4 w-full rounded-2xl p-5 border" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false" onclick="switchLeistungenTab(2)">
+          <span class="tab-icon w-11 h-11 shrink-0 rounded-xl grid place-items-center">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+          </span>
+          <span class="flex-1">
+            <span class="block font-semibold text-[17px]">Spezielle Verfahren</span>
+            <span class="tab-sub block text-sm">Wenn Standardtherapie nicht reicht</span>
+          </span>
+          <svg aria-hidden="true" class="tab-arrow shrink-0" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
 
-      <!-- Card 1: Akute Schmerztherapie -->
-      <div class="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 lg:p-7 flex flex-col tab-active">
-        <div class="w-10 h-10 rounded-xl grid place-items-center mb-4" style="background: var(--primary-soft); color: var(--primary)">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        </div>
-        <div class="font-semibold text-slate-900 text-[17px] leading-tight mb-2">Akute Schmerztherapie</div>
-        <div class="text-[13.5px] text-slate-500 leading-snug mb-5">Schnelle Hilfe bei plötzlichen Beschwerden, meist innerhalb von 24–48 Std.</div>
-        <div class="border-t border-slate-100 pt-5 flex flex-col gap-3.5">
-          <div class="flex gap-3">
-            <div class="mt-[7px] w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
-            <div class="text-[13.5px] leading-[1.55]"><span class="font-semibold text-slate-900">Akutsprechstunde:</span><span class="text-slate-600"> Reservierte Slots für neu aufgetretene starke Schmerzen. Bitte telefonisch melden.</span></div>
-          </div>
-          <div class="flex gap-3">
-            <div class="mt-[7px] w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
-            <div class="text-[13.5px] leading-[1.55]"><span class="font-semibold text-slate-900">Rücken- &amp; Wirbelsäulenschmerzen:</span><span class="text-slate-600"> Bandscheibe, Ischias, Hexenschuss, Blockaden. Konservative Erstbehandlung in einer Sitzung.</span></div>
-          </div>
-          <div class="flex gap-3">
-            <div class="mt-[7px] w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
-            <div class="text-[13.5px] leading-[1.55]"><span class="font-semibold text-slate-900">Knie- &amp; Schulterschmerzen:</span><span class="text-slate-600"> Schmerzdiagnose, Punktion, Infiltration sowie Kortison- oder Hyalurontherapie nach Bedarf.</span></div>
-          </div>
-          <div class="flex gap-3">
-            <div class="mt-[7px] w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
-            <div class="text-[13.5px] leading-[1.55]"><span class="font-semibold text-slate-900">Sportverletzungen:</span><span class="text-slate-600"> Bänder, Sehnen, Muskelfaserrisse. Erstversorgung, Tape, Stoßwelle, Rückkehr-zum-Sport-Plan.</span></div>
-          </div>
-          <div class="flex gap-3">
-            <div class="mt-[7px] w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
-            <div class="text-[13.5px] leading-[1.55]"><span class="font-semibold text-slate-900">Manuelle Therapie &amp; Chirotherapie:</span><span class="text-slate-600"> Sanftes Lösen von Blockaden an Wirbelsäule und Gelenken. Ohne Knacken, wenn gewünscht.</span></div>
-          </div>
+        <div class="hidden lg:block mt-3 rounded-2xl overflow-hidden aspect-[4/3]">
+          <img src="Spine.webp" alt="" class="w-full h-full object-cover object-[35%_50%]">
         </div>
       </div>
 
-      <!-- Card 2: Diagnostik & Bildgebung -->
-      <div class="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 lg:p-7 flex flex-col">
-        <div class="w-10 h-10 rounded-xl grid place-items-center mb-4" style="background: var(--primary-softer); color: var(--primary)">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><rect width="7" height="5" x="7" y="7" rx="1"/><rect width="7" height="5" x="10" y="12" rx="1"/></svg>
+      <div>
+        <div class="tab-panel is-active bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 lg:p-12" role="tabpanel" id="panel-0" aria-labelledby="tab-0">
+          <h3 class="font-serif text-3xl text-slate-900 mb-2">Akute Schmerztherapie</h3>
+          <p class="text-slate-500 mb-8">Schnelle Hilfe bei plötzlichen Beschwerden, meist innerhalb von <span class="whitespace-nowrap">24–48 Std.</span></p>
+          <ul class="grid sm:grid-cols-2 gap-x-10 gap-y-7">
+            <li><div class="flex gap-2.5 font-semibold text-slate-900 mb-1.5"><svg aria-hidden="true" class="mt-0.5 shrink-0 text-brand" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Akutsprechstunde</div><p class="text-[15px] leading-relaxed text-slate-600 pl-7">Reservierte Slots für neu aufgetretene starke Schmerzen. Bitte telefonisch melden.</p></li>
+            <li><div class="flex gap-2.5 font-semibold text-slate-900 mb-1.5"><svg aria-hidden="true" class="mt-0.5 shrink-0 text-brand" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Rücken- &amp; Wirbelsäulenschmerzen</div><p class="text-[15px] leading-relaxed text-slate-600 pl-7">Bandscheibe, Ischias, Hexenschuss, Blockaden. Konservative Erstbehandlung in einer Sitzung.</p></li>
+            <li><div class="flex gap-2.5 font-semibold text-slate-900 mb-1.5"><svg aria-hidden="true" class="mt-0.5 shrink-0 text-brand" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Knie- &amp; Schulterschmerzen</div><p class="text-[15px] leading-relaxed text-slate-600 pl-7">Schmerzdiagnose, Punktion, Infiltration sowie Kortison- oder Hyalurontherapie nach Bedarf.</p></li>
+            <li><div class="flex gap-2.5 font-semibold text-slate-900 mb-1.5"><svg aria-hidden="true" class="mt-0.5 shrink-0 text-brand" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Sportverletzungen</div><p class="text-[15px] leading-relaxed text-slate-600 pl-7">Bänder, Sehnen, Muskelfaserrisse. Erstversorgung, Tape, Stoßwelle, Rückkehr-zum-Sport-Plan.</p></li>
+            <li><div class="flex gap-2.5 font-semibold text-slate-900 mb-1.5"><svg aria-hidden="true" class="mt-0.5 shrink-0 text-brand" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Manuelle Therapie &amp; Chirotherapie</div><p class="text-[15px] leading-relaxed text-slate-600 pl-7">Sanftes Lösen von Blockaden an Wirbelsäule und Gelenken. Ohne Knacken, wenn gewünscht.</p></li>
+          </ul>
         </div>
-        <div class="font-semibold text-slate-900 text-[17px] leading-tight mb-2">Diagnostik &amp; Bildgebung</div>
-        <div class="text-[13.5px] text-slate-500 leading-snug mb-5">Klare Antworten direkt vor Ort — digital und schnell.</div>
-        <div class="border-t border-slate-100 pt-5 flex flex-col gap-3.5">
-          <div class="flex gap-3">
-            <div class="mt-[7px] w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
-            <div class="text-[13.5px] leading-[1.55]"><span class="font-semibold text-slate-900">Digitales Röntgen:</span><span class="text-slate-600"> Strahlungsarme Aufnahmen in der Praxis.</span></div>
-          </div>
-          <div class="flex gap-3">
-            <div class="mt-[7px] w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
-            <div class="text-[13.5px] leading-[1.55]"><span class="font-semibold text-slate-900">Ganganalyse &amp; Haltungsdiagnostik:</span><span class="text-slate-600"> Für Beschwerden an Knie, Hüfte und Rücken, inkl. Einlagen-Empfehlung.</span></div>
-          </div>
-          <div class="flex gap-3">
-            <div class="mt-[7px] w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
-            <div class="text-[13.5px] leading-[1.55]"><span class="font-semibold text-slate-900">OP-Beratung &amp; Zweitmeinung:</span><span class="text-slate-600"> Zweite Meinung vor geplanten orthopädischen Eingriffen.</span></div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Card 3: Spezielle Verfahren -->
-      <div class="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 lg:p-7 flex flex-col">
-        <div class="w-10 h-10 rounded-xl grid place-items-center mb-4" style="background: var(--primary-softer); color: var(--primary)">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+        <div class="tab-panel bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 lg:p-12" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
+          <h3 class="font-serif text-3xl text-slate-900 mb-2">Diagnostik &amp; Bildgebung</h3>
+          <p class="text-slate-500 mb-8">Klare Antworten direkt vor Ort — digital und schnell.</p>
+          <ul class="grid sm:grid-cols-2 gap-x-10 gap-y-7">
+            <li><div class="flex gap-2.5 font-semibold text-slate-900 mb-1.5"><svg aria-hidden="true" class="mt-0.5 shrink-0 text-brand" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Digitales Röntgen</div><p class="text-[15px] leading-relaxed text-slate-600 pl-7">Strahlungsarme Aufnahmen in der Praxis.</p></li>
+            <li><div class="flex gap-2.5 font-semibold text-slate-900 mb-1.5"><svg aria-hidden="true" class="mt-0.5 shrink-0 text-brand" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Ganganalyse &amp; Haltungsdiagnostik</div><p class="text-[15px] leading-relaxed text-slate-600 pl-7">Für Beschwerden an Knie, Hüfte und Rücken, inkl. Einlagen-Empfehlung.</p></li>
+            <li><div class="flex gap-2.5 font-semibold text-slate-900 mb-1.5"><svg aria-hidden="true" class="mt-0.5 shrink-0 text-brand" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>OP-Beratung &amp; Zweitmeinung</div><p class="text-[15px] leading-relaxed text-slate-600 pl-7">Zweite Meinung vor geplanten orthopädischen Eingriffen.</p></li>
+          </ul>
         </div>
-        <div class="font-semibold text-slate-900 text-[17px] leading-tight mb-2">Spezielle Verfahren</div>
-        <div class="text-[13.5px] text-slate-500 leading-snug mb-5">Moderne konservative Methoden, wenn Standardtherapie nicht reicht.</div>
-        <div class="border-t border-slate-100 pt-5 flex flex-col gap-3.5">
-          <div class="flex gap-3">
-            <div class="mt-[7px] w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
-            <div class="text-[13.5px] leading-[1.55]"><span class="font-semibold text-slate-900">Stoßwellentherapie:</span><span class="text-slate-600"> Fersensporn, Tennisellbogen, chronische Sehnenreizungen. Meist 3–5 Sitzungen.</span></div>
-          </div>
-          <div class="flex gap-3">
-            <div class="mt-[7px] w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
-            <div class="text-[13.5px] leading-[1.55]"><span class="font-semibold text-slate-900">Hyaluronsäure-Behandlung:</span><span class="text-slate-600"> Bei Arthrose im Knie oder an der Schulter. Schmerzlinderung über Monate.</span></div>
-          </div>
-          <div class="flex gap-3">
-            <div class="mt-[7px] w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: var(--primary)"></div>
-            <div class="text-[13.5px] leading-[1.55]"><span class="font-semibold text-slate-900">Akupunktur (Körper &amp; Ohr):</span><span class="text-slate-600"> Anerkannte Schmerzakupunktur bei chronischen Rücken- und Knieschmerzen.</span></div>
-          </div>
+
+        <div class="tab-panel bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 lg:p-12" role="tabpanel" id="panel-2" aria-labelledby="tab-2">
+          <h3 class="font-serif text-3xl text-slate-900 mb-2">Spezielle Verfahren</h3>
+          <p class="text-slate-500 mb-8">Moderne konservative Methoden, wenn Standardtherapie nicht reicht.</p>
+          <ul class="grid sm:grid-cols-2 gap-x-10 gap-y-7">
+            <li><div class="flex gap-2.5 font-semibold text-slate-900 mb-1.5"><svg aria-hidden="true" class="mt-0.5 shrink-0 text-brand" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Stoßwellentherapie</div><p class="text-[15px] leading-relaxed text-slate-600 pl-7">Fersensporn, Tennisellbogen, chronische Sehnenreizungen. Meist 3–5 Sitzungen.</p></li>
+            <li><div class="flex gap-2.5 font-semibold text-slate-900 mb-1.5"><svg aria-hidden="true" class="mt-0.5 shrink-0 text-brand" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Hyaluronsäure-Behandlung</div><p class="text-[15px] leading-relaxed text-slate-600 pl-7">Bei Arthrose im Knie oder an der Schulter. Schmerzlinderung über Monate.</p></li>
+            <li><div class="flex gap-2.5 font-semibold text-slate-900 mb-1.5"><svg aria-hidden="true" class="mt-0.5 shrink-0 text-brand" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Akupunktur (Körper &amp; Ohr)</div><p class="text-[15px] leading-relaxed text-slate-600 pl-7">Anerkannte Schmerzakupunktur bei chronischen Rücken- und Knieschmerzen.</p></li>
+          </ul>
+        </div>
+
+        <div class="mt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-2xl bg-brand-50 border border-brand-100 px-6 py-5">
+          <p class="text-[15px] text-slate-700">Akute Beschwerden? Wir haben reservierte Slots in der Akutsprechstunde.</p>
+          <a href="tel:+4945426026" class="btn-primary !h-11 shrink-0">04542 6026 anrufen</a>
         </div>
       </div>
 
@@ -440,200 +363,148 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     ABOUT
+     ÜBER DIE PRAXIS — Zitat
 ═══════════════════════════════════════════════════════════ -->
-<section id="praxis" class="py-14 lg:py-28" style="background: var(--primary-softer)">
-  <div class="max-w-6xl mx-auto px-6 lg:px-8">
-    <div class="grid lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-16 items-center">
+<section id="praxis" class="section bg-brand-50 border-y border-brand-100">
+  <div class="wrap">
+    <div class="eyebrow mb-4">Über die Praxis</div>
+    <h2 class="heading mb-12 lg:mb-16">Orthopädie in Mölln. Seit 2003.</h2>
 
-      <!-- Portrait -->
-      <div class="relative">
-        <div class="rounded-[28px] overflow-hidden bg-slate-200"
-             style="aspect-ratio: 1316/1600">
-          <img src="Klaus Portrait.jpeg" alt="Dr. Klaus Fink, Orthopäde in Mölln" class="w-full h-full object-cover object-top">
-        </div>
-      </div>
-
-      <!-- Text -->
-      <div>
-        <div class="text-[11.5px] font-semibold tracking-[0.14em] uppercase mb-3" style="color: var(--primary)">
-          Über die Praxis
-        </div>
-        <h2 class="font-serif font-normal text-slate-900 leading-[1.1] tracking-[-0.01em] mb-6"
-            style="font-size: clamp(30px, 3.2vw, 44px)">
-          Orthopädie in Mölln. Seit 2003.
-        </h2>
-        <p class="text-[17px] leading-[1.7] text-slate-700 mb-5 max-w-[56ch]">
-          „Liebe Patientin, lieber Patient, ich freue mich, Sie in meiner Praxis in Mölln zu sehen.
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+      <figure class="lg:col-span-7">
+        <blockquote class="relative font-serif text-[clamp(1.5rem,2.4vw,2.25rem)] leading-[1.3] text-slate-900">
+          <span aria-hidden="true" class="block h-10 lg:h-auto lg:absolute lg:-left-12 lg:-top-3 font-serif text-[5rem] leading-none text-brand-300">“</span>
+          Liebe Patientin, lieber Patient, ich freue mich, Sie in meiner Praxis in Mölln zu sehen.
           Bei akuten Schmerzen an Gelenken, Wirbelsäule oder Muskulatur helfe ich Ihnen und nehme
-          mir die Zeit, die nötig ist, um zur richtigen Behandlung zu kommen."
-        </p>
-        <p class="text-[15.5px] leading-[1.65] text-slate-600 mb-8 max-w-[56ch]">
+          mir die Zeit, die nötig ist, um zur richtigen Behandlung zu kommen.
+        </blockquote>
+        <figcaption class="mt-8 flex items-center gap-4">
+          <span class="w-12 h-12 rounded-full overflow-hidden bg-slate-200 shrink-0">
+            <img src="Klaus Portrait.jpeg" alt="" class="w-full h-full object-cover object-top">
+          </span>
+          <span>
+            <span class="block font-semibold text-slate-900">Klaus Fink</span>
+            <span class="block text-sm text-slate-600">Facharzt für Orthopädie</span>
+          </span>
+        </figcaption>
+      </figure>
+
+      <div class="lg:col-span-5 lg:pt-2">
+        <p class="text-lg leading-relaxed text-slate-700 mb-10">
           Wir arbeiten konsequent konservativ und auf dem aktuellen Stand der Medizin. Operationen sind
           selten der erste Schritt, und nie der einzige Weg, den wir Ihnen anbieten.
         </p>
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-5 pt-6" style="border-top: 1px solid rgba(148,163,184,0.4)">
-          <div>
-            <div class="text-[11px] font-semibold tracking-[0.12em] uppercase mb-1.5" style="color: var(--primary)">Fachgebiet</div>
-            <div class="text-[14.5px] font-semibold text-slate-800 leading-snug">Orthopädie &amp; Chirotherapie</div>
+        <dl class="divide-y divide-brand-200 border-y border-brand-200">
+          <div class="flex justify-between gap-6 py-4">
+            <dt class="text-slate-600">Fachgebiet</dt>
+            <dd class="font-semibold text-slate-900 text-right">Orthopädie</dd>
           </div>
-          <div>
-            <div class="text-[11px] font-semibold tracking-[0.12em] uppercase mb-1.5" style="color: var(--primary)">Sprachen</div>
-            <div class="text-[14.5px] font-semibold text-slate-800 leading-snug">Deutsch · Englisch</div>
+          <div class="flex justify-between gap-6 py-4">
+            <dt class="text-slate-600">Zusatzqualifikationen</dt>
+            <dd class="font-semibold text-slate-900 text-right">Akupunktur · Chirotherapie</dd>
           </div>
-          <div>
-            <div class="text-[11px] font-semibold tracking-[0.12em] uppercase mb-1.5" style="color: var(--primary)">Abrechnung</div>
-            <div class="text-[14.5px] font-semibold text-slate-800 leading-snug">GKV · Privat · Selbstzahler</div>
+          <div class="flex justify-between gap-6 py-4">
+            <dt class="text-slate-600">Sprachen</dt>
+            <dd class="font-semibold text-slate-900 text-right">Deutsch · Englisch</dd>
           </div>
-        </div>
+        </dl>
       </div>
-
     </div>
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     HOURS + NEWS
+     SPRECHZEITEN + AKTUELLES — dunkles Band
 ═══════════════════════════════════════════════════════════ -->
-<section id="sprechzeiten" class="py-14 lg:py-28">
-  <div class="max-w-6xl mx-auto px-6 lg:px-8">
-    <div class="grid lg:grid-cols-[1.05fr_1fr] gap-6">
+<section id="sprechzeiten" class="section bg-brand-900 text-white">
+  <div class="wrap grid lg:grid-cols-2 gap-14 lg:gap-20 items-start">
 
-      <!-- Hours table -->
-      <div class="bg-white rounded-3xl border border-slate-200 p-7 lg:p-9 shadow-sm">
-        <div id="hours-open-badge" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11.5px] font-semibold tracking-[0.04em] mb-5"
-             style="background:#DCFCE7; color:#166534">
-          <span id="hours-open-dot" class="w-2 h-2 rounded-full" style="background:#22C55E; box-shadow:0 0 0 4px #22C55E26"></span>
+    <div>
+      <div class="flex flex-wrap items-center gap-4 mb-4">
+        <div class="eyebrow !text-brand-300">Sprechzeiten</div>
+        <span id="hours-open-badge" class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full text-xs font-medium bg-brand-300 text-brand-900">
+          <span id="hours-open-dot" class="w-1.5 h-1.5 rounded-full bg-brand-900"></span>
           <span id="hours-open-text">Jetzt geöffnet</span>
-        </div>
-        <h3 class="font-serif font-normal text-slate-900 leading-tight mb-1.5" style="font-size:32px">Sprechzeiten</h3>
-        <p class="text-[14px] text-slate-500 mb-6">
-          Termine bevorzugt online über Doctolib. Bei akuten Schmerzen rufen Sie uns bitte direkt an.
-        </p>
-        <ul class="divide-y divide-dashed divide-slate-200" id="hours-table">
-          <!-- filled by JS -->
-        </ul>
+        </span>
       </div>
+      <h2 class="font-serif font-normal text-h2 mb-4">Wann wir für Sie da sind.</h2>
+      <p class="text-[17px] leading-relaxed text-white/70 mb-8 max-w-[46ch]">
+        Termine bevorzugt online über Doctolib. Bei akuten Schmerzen rufen Sie uns bitte direkt an.
+      </p>
+      <ul id="hours-table" class="flex flex-col border-t border-white/15">
+        <!-- filled by JS -->
+      </ul>
+    </div>
 
-      <!-- News -->
-      <div id="aktuelles" class="rounded-3xl p-7 lg:p-9 text-white"
-           style="background: linear-gradient(160deg, var(--primary-ink), var(--primary))">
-        <h3 class="font-serif font-normal leading-tight mb-1.5" style="font-size:32px">Aktuelles aus der Praxis</h3>
-        <p class="text-[14px] mb-6" style="color:rgba(255,255,255,0.7)">
-          Vertretungen, Sprechzeiten und kurzfristige Hinweise.
-        </p>
-        <div id="news-list" class="flex flex-col gap-3.5">
-          <!-- filled from news.json -->
-        </div>
+    <div id="aktuelles">
+      <div class="eyebrow !text-brand-300 mb-4">Aktuelles</div>
+      <h2 class="font-serif font-normal text-h2 mb-4">Aktuelles aus der Praxis</h2>
+      <p class="text-[17px] leading-relaxed text-white/70 mb-8">
+        Vertretungen, Sprechzeiten und kurzfristige Hinweise.
+      </p>
+      <div id="news-list" class="flex flex-col gap-4">
+        <!-- filled from news.json -->
       </div>
     </div>
+
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     CONTACT
+     KONTAKT — Split mit Karte bis zum Rand
 ═══════════════════════════════════════════════════════════ -->
-<section id="kontakt" class="py-14 lg:py-28">
-  <div class="max-w-6xl mx-auto px-6 lg:px-8">
+<section id="kontakt" class="grid lg:grid-cols-[5fr_7fr] bg-sand">
 
-    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
-      <div>
-        <div class="text-[11.5px] font-semibold tracking-[0.14em] uppercase mb-3" style="color: var(--primary)">So finden Sie uns</div>
-        <h2 class="font-serif font-normal text-slate-900 leading-[1.08] tracking-[-0.01em]"
-            style="font-size: clamp(32px, 3.4vw, 46px)">
-          Hauptstraße 33, Mölln
-        </h2>
+  <div class="px-5 sm:px-8 lg:pr-16 lg:pl-[max(3rem,calc(50vw-37rem))] py-20 lg:py-28">
+    <div class="eyebrow mb-4">So finden Sie uns</div>
+    <h2 class="heading mb-4">Kontakt &amp; Anfahrt</h2>
+    <p class="lead mb-10">Parkplätze im Parkhaus ca. 100&nbsp;m entfernt.</p>
+
+    <ul class="flex flex-col gap-6 text-base mb-10">
+      <li class="flex gap-4 items-start">
+        <span class="w-11 h-11 shrink-0 rounded-full grid place-items-center bg-white text-brand border border-slate-200">
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        </span>
+        <span class="pt-2.5 text-slate-700"><span class="font-semibold text-slate-900">Praxis Klaus Fink</span><br>Hauptstraße 33<br>23879 Mölln</span>
+      </li>
+      <li class="flex gap-4 items-center">
+        <span class="w-11 h-11 shrink-0 rounded-full grid place-items-center bg-white text-brand border border-slate-200">
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.45 2 2 0 0 1 3.57 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9A16 16 0 0 0 15 16.09l1.09-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </span>
+        <a href="tel:+4945426026" class="font-semibold text-slate-900 hover:text-brand hover:underline">04542 6026</a>
+      </li>
+      <li class="flex gap-4 items-center">
+        <span class="w-11 h-11 shrink-0 rounded-full grid place-items-center bg-white text-brand border border-slate-200">
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </span>
+        <a href="mailto:praxiskfink@gmx.de" class="text-slate-700 hover:text-brand hover:underline break-all">praxiskfink@gmx.de</a>
+      </li>
+    </ul>
+
+    <a href="https://www.doctolib.de/orthopadie/moelln/klaus-fink" target="_blank" rel="noopener" class="btn-primary">
+      <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="m9 16 2 2 4-4"/></svg>
+      Online buchen via Doctolib
+    </a>
+  </div>
+
+  <!-- Map (2-Klick-Lösung / DSGVO-konform) -->
+  <div class="relative min-h-[420px] lg:min-h-0 bg-brand-100" id="maps-wrapper">
+    <div id="maps-consent" class="absolute inset-0 flex flex-col items-center justify-center gap-5 p-8 text-center">
+      <div class="w-14 h-14 rounded-full grid place-items-center bg-white text-brand shadow-sm">
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
       </div>
-      <p class="text-slate-600 text-[15.5px] max-w-[40ch]">
-        Parkplätze im Parkhaus ca. 100m entfernt.
+      <p class="text-[15px] text-slate-700 leading-relaxed max-w-[36ch]">
+        Für die interaktive Karte wird <strong class="font-semibold text-slate-900">Google Maps</strong> geladen.
+        Dabei wird Ihre IP-Adresse an Google (USA) übertragen.
+      </p>
+      <button onclick="loadGoogleMaps()" class="btn-primary">Karte laden &amp; zustimmen</button>
+      <p class="text-sm text-slate-600 max-w-[38ch]">
+        Mit dem Klick stimmen Sie der Übertragung zu.
+        Weitere Infos in unserer <a href="datenschutz.html" class="underline hover:text-slate-900">Datenschutzerklärung</a>.
       </p>
     </div>
-
-    <div class="grid lg:grid-cols-[380px_1fr] rounded-3xl overflow-hidden border border-slate-200 shadow-sm bg-white">
-
-      <!-- Info sidebar -->
-      <div class="p-7 lg:p-8 flex flex-col gap-5">
-        <div>
-          <div class="font-serif font-normal text-slate-900 leading-tight mb-1" style="font-size:28px">Praxis Klaus Fink</div>
-          <div class="flex items-center gap-2 text-[13.5px] text-slate-600">
-            <span class="text-amber-500 tracking-[1px]">★★★★☆</span>
-            <span class="font-semibold text-slate-800">4,2</span>
-            <span>· 50 Google-Bewertungen</span>
-          </div>
-        </div>
-
-        <ul class="flex flex-col gap-3.5 text-[14.5px]">
-          <li class="flex gap-3 items-start text-slate-700">
-            <svg class="mt-0.5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-            <div><strong class="text-slate-900">Hauptstraße 33</strong><br>23879 Mölln</div>
-          </li>
-          <li class="flex gap-3 items-start text-slate-700">
-            <svg class="mt-0.5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.45 2 2 0 0 1 3.57 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9A16 16 0 0 0 15 16.09l1.09-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            <div><a href="tel:+4945426026" class="font-semibold hover:underline" style="color: var(--primary)">04542 6026</a></div>
-          </li>
-          <li class="flex gap-3 items-start text-slate-700">
-            <svg class="mt-0.5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            <div><a href="mailto:praxiskfink@gmx.de" class="hover:underline" style="color: var(--primary)">praxiskfink@gmx.de</a></div>
-          </li>
-          <li class="flex gap-3 items-start text-slate-700">
-            <svg class="mt-0.5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="m9 16 2 2 4-4"/></svg>
-            <div><a href="https://www.doctolib.de/orthopadie/moelln/klaus-fink" target="_blank" rel="noopener" class="hover:underline" style="color: var(--primary)">Online buchen via Doctolib</a></div>
-          </li>
-        </ul>
-
-        <a href="https://www.doctolib.de/orthopadie/moelln/klaus-fink" target="_blank" rel="noopener"
-           class="btn-lift self-start inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[14px] font-medium text-white"
-           style="background: linear-gradient(135deg, var(--primary), var(--accent))">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="m9 16 2 2 4-4"/></svg>
-          Termin buchen
-        </a>
-      </div>
-
-      <!-- Map (2-Klick-Lösung / DSGVO-konform) -->
-      <div class="relative min-h-[420px] lg:min-h-0" id="maps-wrapper">
-
-        <!-- Consent placeholder — wird nach Klick durch iframe ersetzt -->
-        <div id="maps-consent"
-             class="absolute inset-0 flex flex-col items-center justify-center gap-5 p-8 text-center"
-             style="background: var(--primary-softer); border-left: 1px solid rgba(148,163,184,0.25)">
-
-          <div class="w-14 h-14 rounded-2xl grid place-items-center"
-               style="background: var(--primary-soft); color: var(--primary)">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor"
-                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
-            </svg>
-          </div>
-
-          <div>
-            <div class="font-semibold text-slate-900 text-[16px] mb-2">Hauptstraße 33, 23879 Mölln</div>
-            <p class="text-[13.5px] text-slate-600 leading-[1.65] max-w-[34ch]">
-              Für die interaktive Karte wird <strong>Google Maps</strong> geladen.
-              Dabei wird Ihre IP-Adresse an Google (USA) übertragen.
-            </p>
-          </div>
-
-          <button onclick="loadGoogleMaps()"
-                  class="btn-lift inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[14px] font-medium text-white"
-                  style="background: linear-gradient(135deg, var(--primary), var(--accent))">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor"
-                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
-            </svg>
-            Karte laden &amp; zustimmen
-          </button>
-
-          <p class="text-[11.5px] text-slate-400 max-w-[36ch]">
-            Mit dem Klick stimmen Sie der Übertragung zu.<br>
-            Weitere Infos in unserer
-            <a href="datenschutz.html" class="underline hover:text-slate-600">Datenschutzerklärung</a>.
-          </p>
-        </div>
-
-      </div>
-    </div>
-
   </div>
+
 </section>
 
 </main>
@@ -641,57 +512,51 @@
 <!-- ═══════════════════════════════════════════════════════════
      FOOTER
 ═══════════════════════════════════════════════════════════ -->
-<footer class="text-white" style="background: var(--primary-ink)">
-  <div class="max-w-6xl mx-auto px-6 lg:px-8 py-16">
-    <div class="grid sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr] gap-8 lg:gap-12 mb-12">
+<footer class="bg-slate-900 text-white/75">
+  <div class="wrap pt-16 pb-10">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr] gap-10 lg:gap-12 mb-12">
 
-      <!-- Brand col -->
       <div>
-        <div class="flex items-center gap-3 mb-3">
-          <span class="h-10 px-3 rounded-2xl grid place-items-center font-serif italic text-white shadow-sm"
-                style="background: linear-gradient(135deg, var(--primary), var(--accent)); font-size: 15px; letter-spacing: 0.02em; white-space: nowrap">K. F.</span>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="logo-mark">K. F.</span>
           <span class="font-semibold text-white text-[15px]">Klaus Fink</span>
         </div>
-        <p class="text-[14px] leading-[1.65] max-w-[34ch]" style="color:rgba(255,255,255,0.65)">
+        <p class="text-sm leading-relaxed max-w-[34ch]">
           Konservative Orthopädie, Chirotherapie und moderne Diagnostik für Erwachsene und Kinder in Mölln und Umgebung.
         </p>
       </div>
 
-      <!-- Col: Praxis -->
       <div>
-        <div class="text-[11.5px] font-semibold tracking-[0.14em] uppercase mb-3 text-white">Praxis</div>
-        <div class="flex flex-col gap-1.5">
-          <a href="#leistungen" class="text-[14px] hover:text-white" style="color:rgba(255,255,255,0.65)">Leistungen</a>
-          <a href="#praxis" class="text-[14px] hover:text-white" style="color:rgba(255,255,255,0.65)">Über die Praxis</a>
-          <a href="#aktuelles" class="text-[14px] hover:text-white" style="color:rgba(255,255,255,0.65)">Aktuelles</a>
-        </div>
+        <div class="text-sm font-semibold text-white mb-4">Praxis</div>
+        <ul class="flex flex-col gap-3 text-sm">
+          <li><a href="#leistungen" class="hover:text-white">Leistungen</a></li>
+          <li><a href="#praxis" class="hover:text-white">Über die Praxis</a></li>
+          <li><a href="#aktuelles" class="hover:text-white">Aktuelles</a></li>
+        </ul>
       </div>
 
-      <!-- Col: Termine -->
       <div>
-        <div class="text-[11.5px] font-semibold tracking-[0.14em] uppercase mb-3 text-white">Termine</div>
-        <div class="flex flex-col gap-1.5">
-          <a href="https://www.doctolib.de/orthopadie/moelln/klaus-fink" target="_blank" rel="noopener" class="text-[14px] hover:text-white" style="color:rgba(255,255,255,0.65)">Doctolib</a>
-          <a href="#sprechzeiten" class="text-[14px] hover:text-white" style="color:rgba(255,255,255,0.65)">Sprechzeiten</a>
-          <a href="tel:+4945426026" class="text-[14px] hover:text-white" style="color:rgba(255,255,255,0.65)">04542 6026</a>
-        </div>
+        <div class="text-sm font-semibold text-white mb-4">Termine</div>
+        <ul class="flex flex-col gap-3 text-sm">
+          <li><a href="https://www.doctolib.de/orthopadie/moelln/klaus-fink" target="_blank" rel="noopener" class="hover:text-white">Doctolib</a></li>
+          <li><a href="#sprechzeiten" class="hover:text-white">Sprechzeiten</a></li>
+          <li><a href="tel:+4945426026" class="hover:text-white">04542 6026</a></li>
+        </ul>
       </div>
 
-      <!-- Col: Kontakt -->
       <div>
-        <div class="text-[11.5px] font-semibold tracking-[0.14em] uppercase mb-3 text-white">Kontakt</div>
-        <div class="flex flex-col gap-1.5">
-          <a href="#kontakt" class="text-[14px] hover:text-white" style="color:rgba(255,255,255,0.65)">Hauptstraße 33, Mölln</a>
-          <a href="mailto:praxiskfink@gmx.de" class="text-[14px] hover:text-white" style="color:rgba(255,255,255,0.65)">praxiskfink@gmx.de</a>
-        </div>
+        <div class="text-sm font-semibold text-white mb-4">Kontakt</div>
+        <ul class="flex flex-col gap-3 text-sm">
+          <li><a href="#kontakt" class="hover:text-white">Hauptstraße 33, Mölln</a></li>
+          <li><a href="mailto:praxiskfink@gmx.de" class="hover:text-white">praxiskfink@gmx.de</a></li>
+        </ul>
       </div>
 
     </div>
 
-    <div class="flex flex-wrap items-center justify-between gap-4 pt-6 text-[12.5px]"
-         style="border-top: 1px solid rgba(255,255,255,0.1); color:rgba(255,255,255,0.55)">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-6 border-t border-white/10 text-sm text-white/60">
       <div>© 2026 Orthopädische Praxis Klaus Fink, Mölln</div>
-      <div class="flex gap-5">
+      <div class="flex flex-wrap gap-x-6 gap-y-2">
         <a href="impressum.html" class="hover:text-white">Impressum</a>
         <a href="datenschutz.html" class="hover:text-white">Datenschutz</a>
         <a href="barrierefreiheit.html" class="hover:text-white">Barrierefreiheit</a>
@@ -720,30 +585,26 @@ const todayStr = new Date().toISOString().split('T')[0];
 const isVacation = VACATION_UNTIL && todayStr <= VACATION_UNTIL;
 const isOpenToday = !isVacation && todayData[1] !== "geschlossen";
 
-
-// Build hours table
+// ─── Hours table ───────────────────────────────────────────────
 const tableEl = document.getElementById("hours-table");
 HOURS.forEach(([day, time], i) => {
   const isToday = i === todayIdx;
+  const closed = time === "geschlossen";
   const li = document.createElement("li");
-  li.className = "flex items-start justify-between gap-3 py-3.5";
-  const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary').trim() || '#0F766E';
-  const timeDisplay = time.includes(' · ') ? time.split(' · ').join('<br>') : time;
+  li.className = "flex items-start justify-between gap-4 py-4 border-b border-white/15"
+    + (isToday ? " -mx-4 px-4 rounded-xl bg-white/10 border-transparent" : "");
   li.innerHTML = `
-    <span class="text-[15px] ${isToday ? "font-semibold" : "font-medium text-slate-800"}"
-          style="${isToday ? "color:#0F766E" : ""}">
-      ${day}
-      ${isToday ? `<span class="ml-2.5 inline-block text-[10px] font-semibold tracking-[0.1em] uppercase px-2 py-[3px] rounded-full text-white" style="background:#0F766E">Heute</span>` : ""}
+    <span class="text-base ${isToday ? "font-semibold text-white" : "text-white/85"}">
+      ${day}${isToday ? `<span class="ml-2 px-2 py-0.5 rounded-full bg-brand-300 text-brand-900 text-xs font-semibold">Heute</span>` : ""}
     </span>
-    <span class="text-[13.5px] tabular-nums text-right leading-[1.55] shrink-0 ${time === "geschlossen" ? "italic text-slate-400" : "text-slate-600"}">
-      ${timeDisplay}
-    </span>
-  `;
+    <span class="text-[15px] tabular-nums text-right leading-relaxed shrink-0 ${closed ? "text-white/50" : "text-white/85"}">
+      ${time.split(' · ').join('<br>')}
+    </span>`;
   tableEl.appendChild(li);
 });
 
-// ─── Open/closed logic — shared by hero + hours badges ─────────
-(function() {
+// ─── Open/closed logic — hero card, facts strip, hours badge ───
+(function () {
   const now = new Date();
   const timeNum = now.getHours() * 60 + now.getMinutes();
   let open = false;
@@ -756,36 +617,23 @@ HOURS.forEach(([day, time], i) => {
     }
   }
 
-  if (!open) {
-    // Hero badge
-    const badge = document.getElementById('hero-status-badge');
-    const dot   = document.getElementById('hero-status-dot');
-    const text  = document.getElementById('hero-status-text');
-    if (badge) {
-      badge.style.background = '#F1F5F9';
-      badge.style.color = '#64748B';
-      dot.style.background = '#94A3B8';
-      text.textContent = 'HEUTE GESCHLOSSEN';
-    }
-    // Sprechzeiten badge
-    const hBadge = document.getElementById('hours-open-badge');
-    const hDot   = document.getElementById('hours-open-dot');
-    const hText  = document.getElementById('hours-open-text');
-    if (hBadge) {
-      hBadge.style.background = '#F1F5F9';
-      hBadge.style.color = '#64748B';
-      hDot.style.background = '#94A3B8';
-      hDot.style.boxShadow = 'none';
-      hText.textContent = 'Heute geschlossen';
-    }
-  }
-})();
+  document.getElementById("fact-today-hours").textContent =
+    isVacation ? "Urlaub" : todayData[1].replace(" · ", ", ");
+  document.getElementById("fact-today-status").textContent = open ? "Jetzt geöffnet" : "Heute geschlossen";
+  if (open) return;
 
-// ─── Sticky nav ────────────────────────────────────────────────
-const header = document.getElementById("site-header");
-window.addEventListener("scroll", () => {
-  header.classList.toggle("scrolled", window.scrollY > 12);
-}, { passive: true });
+  const heroBadge = document.getElementById("hero-status-badge");
+  heroBadge.classList.replace("bg-brand-100", "bg-slate-100");
+  heroBadge.classList.replace("text-brand-900", "text-slate-600");
+  document.getElementById("hero-status-dot").classList.replace("bg-brand", "bg-slate-400");
+  document.getElementById("hero-status-text").textContent = "Heute geschlossen";
+
+  const hoursBadge = document.getElementById("hours-open-badge");
+  hoursBadge.classList.replace("bg-brand-300", "bg-white/15");
+  hoursBadge.classList.replace("text-brand-900", "text-white");
+  document.getElementById("hours-open-dot").classList.replace("bg-brand-900", "bg-white/60");
+  document.getElementById("hours-open-text").textContent = "Heute geschlossen";
+})();
 
 // ─── Mobile menu ───────────────────────────────────────────────
 const menuToggle = document.getElementById("menu-toggle");
@@ -793,20 +641,15 @@ const mobileMenu = document.getElementById("mobile-menu");
 const iconOpen   = document.getElementById("menu-icon-open");
 const iconClose  = document.getElementById("menu-icon-close");
 
-menuToggle.addEventListener("click", () => {
-  const isOpen = mobileMenu.classList.toggle("open");
-  iconOpen.classList.toggle("hidden", isOpen);
-  iconClose.classList.toggle("hidden", !isOpen);
-});
-
-// Close mobile menu on link click
-mobileMenu.querySelectorAll("a").forEach(a => {
-  a.addEventListener("click", () => {
-    mobileMenu.classList.remove("open");
-    iconOpen.classList.remove("hidden");
-    iconClose.classList.add("hidden");
-  });
-});
+function setMenu(open) {
+  mobileMenu.classList.toggle("open", open);
+  iconOpen.classList.toggle("hidden", open);
+  iconClose.classList.toggle("hidden", !open);
+  menuToggle.setAttribute("aria-expanded", String(open));
+  menuToggle.setAttribute("aria-label", open ? "Menü schließen" : "Menü öffnen");
+}
+menuToggle.addEventListener("click", () => setMenu(!mobileMenu.classList.contains("open")));
+mobileMenu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setMenu(false)));
 
 // ─── Google Maps Consent (2-Klick-Lösung) ──────────────────────
 function loadGoogleMaps() {
@@ -820,54 +663,74 @@ function loadGoogleMaps() {
   iframe.allowFullscreen = true;
   wrapper.appendChild(iframe);
 }
-// Karte automatisch laden, wenn Einwilligung bereits erteilt wurde
 if (localStorage.getItem('maps-consent') === '1') {
   document.addEventListener('DOMContentLoaded', loadGoogleMaps);
 }
 
-// ─── Leistungen mobile tabs ────────────────────────────────────
+// ─── Leistungen tabs ───────────────────────────────────────────
+const TAB_ON  = ["bg-brand", "border-brand", "text-white", "shadow-lg", "shadow-brand/20"];
+const TAB_OFF = ["bg-white", "border-slate-200", "text-slate-900", "hover:border-brand-300"];
 function switchLeistungenTab(n) {
-  document.querySelectorAll('#leistungen-grid > div').forEach((el, i) => {
-    el.classList.toggle('tab-active', i === n);
-  });
-  document.querySelectorAll('.leistungen-tab').forEach((btn, i) => {
-    btn.classList.toggle('tab-active-btn', i === n);
-    if (i !== n) btn.classList.add('text-slate-600');
-    else btn.classList.remove('text-slate-600');
+  document.querySelectorAll('.tab-panel').forEach((el, i) => el.classList.toggle('is-active', i === n));
+  document.querySelectorAll('.tab-btn').forEach((btn, i) => {
+    const on = i === n;
+    btn.setAttribute('aria-selected', String(on));
+    btn.classList.remove(...(on ? TAB_OFF : TAB_ON));
+    btn.classList.add(...(on ? TAB_ON : TAB_OFF));
+    const icon = btn.querySelector('.tab-icon');
+    icon.className = 'tab-icon w-11 h-11 shrink-0 rounded-xl grid place-items-center ' + (on ? 'bg-white/15 text-white' : 'bg-brand-100 text-brand');
+    btn.querySelector('.tab-sub').className = 'tab-sub block text-sm ' + (on ? 'text-white/75' : 'text-slate-500');
+    btn.querySelector('.tab-arrow').setAttribute('class', 'tab-arrow shrink-0 ' + (on ? 'text-white' : 'text-slate-400'));
   });
 }
+switchLeistungenTab(0);
 
-
-// ── Aktuelles aus der Praxis ─────────────────────────────────
+// ─── Aktuelles + Hinweis-Leiste (news.json) ────────────────────
 (function () {
+  const NEUTRAL = 'bg-brand-100 text-brand-900';
+  const ALERT   = 'bg-amber-100 text-amber-900';
   const BADGE = {
-    hinweis: { bg: '#7DD3FC', color: '#0C4A6E', label: 'Hinweis' },
-    wichtig:  { bg: '#FECACA', color: '#7F1D1D', label: 'Wichtig' },
-    urlaub:   { bg: '#FDE68A', color: '#78350F', label: 'Urlaub'   },
-    neu:      { bg: '#BBF7D0', color: '#14532D', label: 'Neu'      },
-    barriere: { bg: '#E9D5FF', color: '#4C1D95', label: 'Barriere' },
-    info:     { bg: 'rgba(255,255,255,0.18)', color: '#fff', label: 'Info' },
+    hinweis:  { cls: NEUTRAL, label: 'Hinweis'  },
+    wichtig:  { cls: ALERT,   label: 'Wichtig'  },
+    urlaub:   { cls: ALERT,   label: 'Urlaub'   },
+    neu:      { cls: NEUTRAL, label: 'Neu'      },
+    barriere: { cls: NEUTRAL, label: 'Barriere' },
+    info:     { cls: NEUTRAL, label: 'Info'     },
+  };
+  const el = (tag, cls, text) => {
+    const n = document.createElement(tag);
+    n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
   };
   fetch('news.json')
-    .then(function(r){ return r.json(); })
-    .then(function(items){
-      var list = document.getElementById('news-list');
-      if (!list) return;
-      list.innerHTML = items.map(function(item){
-        var b = BADGE[item.type] || BADGE.info;
-        return '<div class="relative rounded-2xl p-5 border" style="border-color:rgba(255,255,255,0.1);background:rgba(255,255,255,0.06)">'
-          + '<div class="flex items-start justify-between gap-3 mb-2.5">'
-          + '<span class="text-[10.5px] font-semibold tracking-[0.12em] uppercase px-2 py-[3px] rounded-full" style="background:' + b.bg + ';color:' + b.color + '">' + b.label + '</span>'
-          + '<span class="text-[12px] tabular-nums" style="color:rgba(255,255,255,0.55)">' + item.date + '</span>'
-          + '</div>'
-          + '<div class="text-[15.5px] font-semibold leading-snug mb-1">' + item.title + '</div>'
-          + '<div class="text-[14px] leading-[1.55]" style="color:rgba(255,255,255,0.75)">' + item.body + '</div>'
-          + '</div>';
-      }).join('');
-    })
-    .catch(function(){});
-}());
+    .then(r => r.json())
+    .then(items => {
+      if (!items.length) return;
+      const list = document.getElementById('news-list');
+      items.forEach(item => {
+        const b = BADGE[item.type] || BADGE.info;
+        const card = el('article', 'rounded-2xl p-6 bg-white text-slate-900');
+        const head = el('div', 'flex items-center justify-between gap-3 mb-3');
+        head.append(
+          el('span', 'text-xs font-semibold uppercase tracking-[0.08em] px-2.5 py-1 rounded-full ' + b.cls, b.label),
+          el('span', 'text-sm tabular-nums text-slate-500', item.date)
+        );
+        card.append(
+          head,
+          el('h3', 'text-[17px] font-semibold leading-snug mb-1.5', item.title),
+          el('p', 'text-[15px] leading-relaxed text-slate-600', item.body)
+        );
+        list.appendChild(card);
+      });
 
+      const first = items[0];
+      document.getElementById('notice-label').textContent = (BADGE[first.type] || BADGE.info).label;
+      document.getElementById('notice-text').textContent = first.title;
+      document.getElementById('notice-bar').hidden = false;
+    })
+    .catch(() => {});
+})();
 </script>
 
 </body>
